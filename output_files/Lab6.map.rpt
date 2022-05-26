@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Lab6
-Thu May 26 01:36:22 2022
+Thu May 26 15:07:37 2022
 Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 
 
@@ -10,17 +10,23 @@ Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis IP Cores Summary
-  6. Parameter Settings for User Entity Instance: video_driver:v1
-  7. Parameter Settings for User Entity Instance: video_driver:v1|CLOCK25_PLL:c25_gen|CLOCK25_PLL_0002:clock25_pll_inst|altera_pll:altera_pll_i
-  8. Parameter Settings for User Entity Instance: video_driver:v1|altera_up_avalon_video_vga_timing:video
-  9. Port Connectivity Checks: "video_driver:v1|altera_up_avalon_video_vga_timing:video"
- 10. Port Connectivity Checks: "video_driver:v1|CLOCK25_PLL:c25_gen"
- 11. Port Connectivity Checks: "video_driver:v1"
- 12. Port Connectivity Checks: "line_drawer:draw_unit"
- 13. Port Connectivity Checks: "screenWipe:comb_16"
- 14. Port Connectivity Checks: "clock_divider:cdiv"
- 15. Analysis & Synthesis Messages
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Analysis & Synthesis IP Cores Summary
+  9. Registers Removed During Synthesis
+ 10. Removed Registers Triggering Further Register Optimizations
+ 11. General Register Statistics
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Parameter Settings for User Entity Instance: video_driver:v1
+ 14. Parameter Settings for User Entity Instance: video_driver:v1|CLOCK25_PLL:c25_gen|CLOCK25_PLL_0002:clock25_pll_inst|altera_pll:altera_pll_i
+ 15. Parameter Settings for User Entity Instance: video_driver:v1|altera_up_avalon_video_vga_timing:video
+ 16. Port Connectivity Checks: "video_driver:v1|altera_up_avalon_video_vga_timing:video"
+ 17. Port Connectivity Checks: "video_driver:v1|CLOCK25_PLL:c25_gen"
+ 18. Port Connectivity Checks: "clock_divider:cdiv"
+ 19. Post-Synthesis Netlist Statistics for Top Partition
+ 20. Elapsed Time Per Partition
+ 21. Analysis & Synthesis Messages
 
 
 
@@ -44,22 +50,27 @@ agreement for further details.
 
 
 
-+---------------------------------------------------------------------------+
-; Analysis & Synthesis Summary                                              ;
-+-----------------------------+---------------------------------------------+
-; Analysis & Synthesis Status ; Failed - Thu May 26 01:36:22 2022           ;
-; Quartus Prime Version       ; 17.0.0 Build 595 04/25/2017 SJ Lite Edition ;
-; Revision Name               ; Lab6                                        ;
-; Top-level Entity Name       ; DE1_SoC                                     ;
-; Family                      ; Cyclone V                                   ;
-; Logic utilization (in ALMs) ; N/A until Partition Merge                   ;
-; Total registers             ; N/A until Partition Merge                   ;
-; Total pins                  ; N/A until Partition Merge                   ;
-; Total virtual pins          ; N/A until Partition Merge                   ;
-; Total block memory bits     ; N/A until Partition Merge                   ;
-; Total PLLs                  ; N/A until Partition Merge                   ;
-; Total DLLs                  ; N/A until Partition Merge                   ;
-+-----------------------------+---------------------------------------------+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++---------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Thu May 26 15:07:37 2022       ;
+; Quartus Prime Version           ; 17.0.0 Build 595 04/25/2017 SJ Lite Edition ;
+; Revision Name                   ; Lab6                                        ;
+; Top-level Entity Name           ; DE1_SoC                                     ;
+; Family                          ; Cyclone V                                   ;
+; Logic utilization (in ALMs)     ; N/A                                         ;
+; Total registers                 ; 176                                         ;
+; Total pins                      ; 96                                          ;
+; Total virtual pins              ; 0                                           ;
+; Total block memory bits         ; 0                                           ;
+; Total DSP Blocks                ; 0                                           ;
+; Total HSSI RX PCSs              ; 0                                           ;
+; Total HSSI PMA RX Deserializers ; 0                                           ;
+; Total HSSI TX PCSs              ; 0                                           ;
+; Total HSSI PMA TX Serializers   ; 0                                           ;
+; Total PLLs                      ; 1                                           ;
+; Total DLLs                      ; 0                                           ;
++---------------------------------+---------------------------------------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------+
@@ -158,11 +169,76 @@ agreement for further details.
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
+; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processors 3-4         ;   0.0%      ;
 +----------------------------+-------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                          ;
++------------------------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------------------------+-------------+
+; File Name with User-Entered Path               ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                    ; Library     ;
++------------------------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------------------------+-------------+
+; clock_divider.sv                               ; yes             ; User SystemVerilog HDL File  ; E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/clock_divider.sv                               ;             ;
+; VGA Buffer/video_driver.sv                     ; yes             ; User SystemVerilog HDL File  ; E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/video_driver.sv                     ;             ;
+; VGA Buffer/DE1_SoC.sv                          ; yes             ; User SystemVerilog HDL File  ; E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv                          ;             ;
+; VGA Buffer/CLOCK25_PLL.v                       ; yes             ; User Wizard-Generated File   ; E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/CLOCK25_PLL.v                       ; CLOCK25_PLL ;
+; VGA Buffer/CLOCK25_PLL/CLOCK25_PLL_0002.v      ; yes             ; User Verilog HDL File        ; E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/CLOCK25_PLL/CLOCK25_PLL_0002.v      ; CLOCK25_PLL ;
+; VGA Buffer/altera_up_avalon_video_vga_timing.v ; yes             ; User Verilog HDL File        ; E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/altera_up_avalon_video_vga_timing.v ;             ;
+; playerControl.sv                               ; yes             ; User SystemVerilog HDL File  ; E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/playerControl.sv                               ;             ;
+; altera_pll.v                                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/altera_pll.v                             ;             ;
++------------------------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------------------------+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                                                                                                                ;
++---------------------------------------------+--------------------------------------------------------------------------------------------------------------+
+; Resource                                    ; Usage                                                                                                        ;
++---------------------------------------------+--------------------------------------------------------------------------------------------------------------+
+; Estimate of Logic utilization (ALMs needed) ; 121                                                                                                          ;
+;                                             ;                                                                                                              ;
+; Combinational ALUT usage for logic          ; 222                                                                                                          ;
+;     -- 7 input functions                    ; 0                                                                                                            ;
+;     -- 6 input functions                    ; 16                                                                                                           ;
+;     -- 5 input functions                    ; 19                                                                                                           ;
+;     -- 4 input functions                    ; 19                                                                                                           ;
+;     -- <=3 input functions                  ; 168                                                                                                          ;
+;                                             ;                                                                                                              ;
+; Dedicated logic registers                   ; 176                                                                                                          ;
+;                                             ;                                                                                                              ;
+; I/O pins                                    ; 96                                                                                                           ;
+;                                             ;                                                                                                              ;
+; Total DSP Blocks                            ; 0                                                                                                            ;
+;                                             ;                                                                                                              ;
+; Total PLLs                                  ; 1                                                                                                            ;
+;     -- PLLs                                 ; 1                                                                                                            ;
+;                                             ;                                                                                                              ;
+; Maximum fan-out node                        ; video_driver:v1|CLOCK25_PLL:c25_gen|CLOCK25_PLL_0002:clock25_pll_inst|altera_pll:altera_pll_i|outclk_wire[0] ;
+; Maximum fan-out                             ; 109                                                                                                          ;
+; Total fan-out                               ; 1296                                                                                                         ;
+; Average fan-out                             ; 2.19                                                                                                         ;
++---------------------------------------------+--------------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                  ;
++-------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------------------------------------+-----------------------------------+--------------+
+; Compilation Hierarchy Node                      ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                    ; Entity Name                       ; Library Name ;
++-------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------------------------------------+-----------------------------------+--------------+
+; |DE1_SoC                                        ; 222 (32)            ; 176 (12)                  ; 0                 ; 0          ; 96   ; 0            ; |DE1_SoC                                                                                               ; DE1_SoC                           ; work         ;
+;    |clock_divider:cdiv|                         ; 23 (23)             ; 23 (23)                   ; 0                 ; 0          ; 0    ; 0            ; |DE1_SoC|clock_divider:cdiv                                                                            ; clock_divider                     ; work         ;
+;    |playerControl:player_unit|                  ; 38 (38)             ; 34 (34)                   ; 0                 ; 0          ; 0    ; 0            ; |DE1_SoC|playerControl:player_unit                                                                     ; playerControl                     ; work         ;
+;    |video_driver:v1|                            ; 129 (82)            ; 107 (60)                  ; 0                 ; 0          ; 0    ; 0            ; |DE1_SoC|video_driver:v1                                                                               ; video_driver                      ; work         ;
+;       |CLOCK25_PLL:c25_gen|                     ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SoC|video_driver:v1|CLOCK25_PLL:c25_gen                                                           ; CLOCK25_PLL                       ; CLOCK25_PLL  ;
+;          |CLOCK25_PLL_0002:clock25_pll_inst|    ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SoC|video_driver:v1|CLOCK25_PLL:c25_gen|CLOCK25_PLL_0002:clock25_pll_inst                         ; CLOCK25_PLL_0002                  ; CLOCK25_PLL  ;
+;             |altera_pll:altera_pll_i|           ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SoC|video_driver:v1|CLOCK25_PLL:c25_gen|CLOCK25_PLL_0002:clock25_pll_inst|altera_pll:altera_pll_i ; altera_pll                        ; work         ;
+;       |altera_up_avalon_video_vga_timing:video| ; 47 (47)             ; 47 (47)                   ; 0                 ; 0          ; 0    ; 0            ; |DE1_SoC|video_driver:v1|altera_up_avalon_video_vga_timing:video                                       ; altera_up_avalon_video_vga_timing ; work         ;
++-------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------------------------------------+-----------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------+
@@ -172,6 +248,85 @@ agreement for further details.
 +--------+--------------+---------+--------------+--------------+----------------------------------------------+--------------------------+
 ; Altera ; altera_pll   ; 17.0    ; N/A          ; N/A          ; |DE1_SoC|video_driver:v1|CLOCK25_PLL:c25_gen ; VGA Buffer/CLOCK25_PLL.v ;
 +--------+--------------+---------+--------------+--------------+----------------------------------------------+--------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                             ;
++-----------------------------------------------------------------------+----------------------------------------+
+; Register name                                                         ; Reason for Removal                     ;
++-----------------------------------------------------------------------+----------------------------------------+
+; r[0..7]                                                               ; Stuck at GND due to stuck port data_in ;
+; video_driver:v1|rout[0..7]                                            ; Stuck at GND due to stuck port data_in ;
+; video_driver:v1|altera_up_avalon_video_vga_timing:video|vga_red[0..7] ; Stuck at GND due to stuck port data_in ;
+; playerControl:player_unit|rightBound[0]                               ; Stuck at GND due to stuck port data_in ;
+; playerControl:player_unit|leftBound[0]                                ; Stuck at GND due to stuck port data_in ;
+; playerControl:player_unit|botBound[0]                                 ; Stuck at GND due to stuck port data_in ;
+; playerControl:player_unit|topBound[0]                                 ; Stuck at GND due to stuck port data_in ;
+; video_driver:v1|gout[1..7]                                            ; Merged with video_driver:v1|gout[0]    ;
+; video_driver:v1|bout[1..7]                                            ; Merged with video_driver:v1|bout[0]    ;
+; g[1..7]                                                               ; Merged with g[0]                       ;
+; b[1..7]                                                               ; Merged with b[0]                       ;
+; clock_divider:cdiv|divided_clocks[23..31]                             ; Lost fanout                            ;
+; Total Number of Removed Registers = 65                                ;                                        ;
++-----------------------------------------------------------------------+----------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                    ;
++---------------+---------------------------+--------------------------------------------------------------------+
+; Register name ; Reason for Removal        ; Registers Removed due to This Register                             ;
++---------------+---------------------------+--------------------------------------------------------------------+
+; r[7]          ; Stuck at GND              ; video_driver:v1|rout[7],                                           ;
+;               ; due to stuck port data_in ; video_driver:v1|altera_up_avalon_video_vga_timing:video|vga_red[7] ;
+; r[6]          ; Stuck at GND              ; video_driver:v1|rout[6],                                           ;
+;               ; due to stuck port data_in ; video_driver:v1|altera_up_avalon_video_vga_timing:video|vga_red[6] ;
+; r[5]          ; Stuck at GND              ; video_driver:v1|rout[5],                                           ;
+;               ; due to stuck port data_in ; video_driver:v1|altera_up_avalon_video_vga_timing:video|vga_red[5] ;
+; r[4]          ; Stuck at GND              ; video_driver:v1|rout[4],                                           ;
+;               ; due to stuck port data_in ; video_driver:v1|altera_up_avalon_video_vga_timing:video|vga_red[4] ;
+; r[3]          ; Stuck at GND              ; video_driver:v1|rout[3],                                           ;
+;               ; due to stuck port data_in ; video_driver:v1|altera_up_avalon_video_vga_timing:video|vga_red[3] ;
+; r[2]          ; Stuck at GND              ; video_driver:v1|rout[2],                                           ;
+;               ; due to stuck port data_in ; video_driver:v1|altera_up_avalon_video_vga_timing:video|vga_red[2] ;
+; r[1]          ; Stuck at GND              ; video_driver:v1|rout[1],                                           ;
+;               ; due to stuck port data_in ; video_driver:v1|altera_up_avalon_video_vga_timing:video|vga_red[1] ;
+; r[0]          ; Stuck at GND              ; video_driver:v1|rout[0],                                           ;
+;               ; due to stuck port data_in ; video_driver:v1|altera_up_avalon_video_vga_timing:video|vga_red[0] ;
++---------------+---------------------------+--------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 176   ;
+; Number of registers using Synchronous Clear  ; 112   ;
+; Number of registers using Synchronous Load   ; 5     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 80    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                        ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------------+
+; 3:1                ; 15 bits   ; 30 LEs        ; 0 LEs                ; 30 LEs                 ; Yes        ; |DE1_SoC|playerControl:player_unit|botBound[8]                                    ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 0 LEs                ; 34 LEs                 ; Yes        ; |DE1_SoC|playerControl:player_unit|rightBound[8]                                  ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 0 LEs                ; 20 LEs                 ; Yes        ; |DE1_SoC|video_driver:v1|altera_up_avalon_video_vga_timing:video|pixel_counter[2] ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 0 LEs                ; 20 LEs                 ; Yes        ; |DE1_SoC|video_driver:v1|xt[0]                                                    ;
+; 4:1                ; 9 bits    ; 18 LEs        ; 9 LEs                ; 9 LEs                  ; Yes        ; |DE1_SoC|video_driver:v1|yt[0]                                                    ;
+; 4:1                ; 10 bits   ; 20 LEs        ; 0 LEs                ; 20 LEs                 ; Yes        ; |DE1_SoC|video_driver:v1|altera_up_avalon_video_vga_timing:video|line_counter[10] ;
+; 5:1                ; 10 bits   ; 30 LEs        ; 0 LEs                ; 30 LEs                 ; Yes        ; |DE1_SoC|video_driver:v1|x[5]                                                     ;
+; 5:1                ; 10 bits   ; 30 LEs        ; 0 LEs                ; 30 LEs                 ; Yes        ; |DE1_SoC|video_driver:v1|xd[9]                                                    ;
+; 6:1                ; 9 bits    ; 36 LEs        ; 0 LEs                ; 36 LEs                 ; Yes        ; |DE1_SoC|video_driver:v1|y[0]                                                     ;
+; 6:1                ; 9 bits    ; 36 LEs        ; 0 LEs                ; 36 LEs                 ; Yes        ; |DE1_SoC|video_driver:v1|yd[0]                                                    ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |DE1_SoC|video_driver:v1|altera_up_avalon_video_vga_timing:video|vga_green        ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------------+
 
 
 +--------------------------------------------------------------+
@@ -484,46 +639,55 @@ Note: In order to hide this table in the UI and the text report file, please set
 +--------+--------+----------+-------------------------------------------------------------------------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "video_driver:v1"                                                                       ;
-+---------+--------+----------+-------------------------------------------------------------------------------------+
-; Port    ; Type   ; Severity ; Details                                                                             ;
-+---------+--------+----------+-------------------------------------------------------------------------------------+
-; x[9..8] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; y[8]    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+---------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+----------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "line_drawer:draw_unit"                                                                                      ;
-+---------+--------+----------+----------------------------------------------------------------------------------------------------------+
-; Port    ; Type   ; Severity ; Details                                                                                                  ;
-+---------+--------+----------+----------------------------------------------------------------------------------------------------------+
-; y0      ; Input  ; Info     ; Stuck at GND                                                                                             ;
-; x[9..8] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                      ;
-; y[8]    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                      ;
-; done    ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
-+---------+--------+----------+----------------------------------------------------------------------------------------------------------+
-
-
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "screenWipe:comb_16"                                                                 ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; done ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; y0   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-
-
 +----------------------------------------------------------------------------------------------------------------------------------+
 ; Port Connectivity Checks: "clock_divider:cdiv"                                                                                   ;
 +------------------------+--------+----------+-------------------------------------------------------------------------------------+
 ; Port                   ; Type   ; Severity ; Details                                                                             ;
 +------------------------+--------+----------+-------------------------------------------------------------------------------------+
-; divided_clocks[31..18] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; divided_clocks[16..0]  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; divided_clocks[31..23] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; divided_clocks[21..0]  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
 +------------------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_ff             ; 176                         ;
+;     ENA               ; 1                           ;
+;     ENA SCLR          ; 79                          ;
+;     SCLR              ; 33                          ;
+;     SLD               ; 5                           ;
+;     plain             ; 58                          ;
+; arriav_lcell_comb     ; 224                         ;
+;     arith             ; 133                         ;
+;         1 data inputs ; 100                         ;
+;         2 data inputs ; 31                          ;
+;         3 data inputs ; 2                           ;
+;     normal            ; 91                          ;
+;         0 data inputs ; 2                           ;
+;         1 data inputs ; 7                           ;
+;         2 data inputs ; 18                          ;
+;         3 data inputs ; 10                          ;
+;         4 data inputs ; 19                          ;
+;         5 data inputs ; 19                          ;
+;         6 data inputs ; 16                          ;
+; boundary_port         ; 96                          ;
+; generic_pll           ; 1                           ;
+;                       ;                             ;
+; Max LUT depth         ; 4.00                        ;
+; Average LUT depth     ; 2.02                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:01     ;
++----------------+--------------+
 
 
 +-------------------------------+
@@ -532,69 +696,41 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
-    Info: Processing started: Thu May 26 01:36:10 2022
+    Info: Processing started: Thu May 26 15:07:21 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Lab6 -c Lab6
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
-Info (12021): Found 2 design units, including 2 entities, in source file screenwipe_control.sv
-    Info (12023): Found entity 1: screenWipe_Control File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/screenWipe_Control.sv Line: 11
-    Info (12023): Found entity 2: reset_routine_testbench File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/screenWipe_Control.sv Line: 49
+Info (12021): Found 1 design units, including 1 entities, in source file clock_divider.sv
+    Info (12023): Found entity 1: clock_divider File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/clock_divider.sv Line: 6
 Info (12021): Found 1 design units, including 1 entities, in source file vga buffer/video_driver.sv
     Info (12023): Found entity 1: video_driver File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/video_driver.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file vga buffer/de1_soc.sv
     Info (12023): Found entity 1: DE1_SoC File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 1
-Info (12021): Found 2 design units, including 2 entities, in source file singleoutput.sv
-    Info (12023): Found entity 1: singleOutput File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/singleOutput.sv Line: 13
-    Info (12023): Found entity 2: singleOutput_testbench File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/singleOutput.sv Line: 49
-Warning (12019): Can't analyze file -- file reset_routine.sv is missing
-Info (12021): Found 2 design units, including 2 entities, in source file line_drawer.sv
-    Info (12023): Found entity 1: line_drawer File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/line_drawer.sv Line: 18
-    Info (12023): Found entity 2: line_drawer_testbench File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/line_drawer.sv Line: 39
-Info (12021): Found 1 design units, including 1 entities, in source file drawline_datapath.sv
-    Info (12023): Found entity 1: drawLine_datapath File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/drawLine_datapath.sv Line: 25
-Info (12021): Found 1 design units, including 1 entities, in source file drawline_control.sv
-    Info (12023): Found entity 1: drawLine_control File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/drawLine_control.sv Line: 22
 Info (12021): Found 1 design units, including 1 entities, in source file vga buffer/clock25_pll.v
     Info (12023): Found entity 1: CLOCK25_PLL File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/CLOCK25_PLL.v Line: 8
 Info (12021): Found 1 design units, including 1 entities, in source file vga buffer/clock25_pll/clock25_pll_0002.v
     Info (12023): Found entity 1: CLOCK25_PLL_0002 File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/CLOCK25_PLL/CLOCK25_PLL_0002.v Line: 2
 Info (12021): Found 1 design units, including 1 entities, in source file vga buffer/altera_up_avalon_video_vga_timing.v
     Info (12023): Found entity 1: altera_up_avalon_video_vga_timing File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/altera_up_avalon_video_vga_timing.v Line: 47
-Info (12021): Found 1 design units, including 1 entities, in source file screenwipe.sv
-    Info (12023): Found entity 1: screenWipe File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/screenWipe.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file playercontrol.sv
     Info (12023): Found entity 1: playerControl File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/playerControl.sv Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file screenwipe_datapath.sv
-    Info (12023): Found entity 1: screenWipe_Datapath File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/screenWipe_Datapath.sv Line: 1
-Warning (10236): Verilog HDL Implicit Net warning at DE1_SoC.sv(26): created implicit net for "clkSelect" File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 26
-Warning (10236): Verilog HDL Implicit Net warning at DE1_SoC.sv(46): created implicit net for "y0_CSW" File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 46
-Critical Warning (10846): Verilog HDL Instantiation warning at DE1_SoC.sv(46): instance has no name File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 46
+Warning (10236): Verilog HDL Implicit Net warning at DE1_SoC.sv(31): created implicit net for "clkSelect" File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 31
 Info (12127): Elaborating entity "DE1_SoC" for the top level hierarchy
-Warning (10858): Verilog HDL warning at DE1_SoC.sv(35): object y0_SCW used but never assigned File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 35
-Warning (10230): Verilog HDL assignment warning at DE1_SoC.sv(48): truncated value with size 32 to match size of target (10) File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 48
-Warning (10230): Verilog HDL assignment warning at DE1_SoC.sv(49): truncated value with size 32 to match size of target (9) File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 49
-Warning (10230): Verilog HDL assignment warning at DE1_SoC.sv(50): truncated value with size 32 to match size of target (10) File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 50
-Warning (10230): Verilog HDL assignment warning at DE1_SoC.sv(51): truncated value with size 32 to match size of target (9) File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 51
-Warning (10030): Net "y0_SCW" at DE1_SoC.sv(35) has no driver or initial value, using a default initial value '0' File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 35
+Warning (10036): Verilog HDL or VHDL warning at DE1_SoC.sv(25): object "currLevel" assigned a value but never read File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 25
+Warning (10230): Verilog HDL assignment warning at DE1_SoC.sv(27): truncated value with size 80 to match size of target (60) File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 27
 Warning (10034): Output port "LEDR" at DE1_SoC.sv(4) has no driver File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 4
-Warning (12125): Using design file clock_divider.sv, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
-    Info (12023): Found entity 1: clock_divider File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/clock_divider.sv Line: 6
-Info (12128): Elaborating entity "clock_divider" for hierarchy "clock_divider:cdiv" File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 30
-Info (12128): Elaborating entity "screenWipe" for hierarchy "screenWipe:comb_16" File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 46
-Info (12128): Elaborating entity "screenWipe_Control" for hierarchy "screenWipe:comb_16|screenWipe_Control:c_unit" File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/screenWipe.sv Line: 11
-Warning (10230): Verilog HDL assignment warning at screenWipe_Control.sv(39): truncated value with size 32 to match size of target (9) File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/screenWipe_Control.sv Line: 39
-Info (12128): Elaborating entity "screenWipe_Datapath" for hierarchy "screenWipe:comb_16|screenWipe_Datapath:d_unit" File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/screenWipe.sv Line: 12
-Warning (10230): Verilog HDL assignment warning at screenWipe_Datapath.sv(17): truncated value with size 32 to match size of target (9) File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/screenWipe_Datapath.sv Line: 17
-Warning (10230): Verilog HDL assignment warning at screenWipe_Datapath.sv(18): truncated value with size 32 to match size of target (9) File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/screenWipe_Datapath.sv Line: 18
-Info (12128): Elaborating entity "line_drawer" for hierarchy "line_drawer:draw_unit" File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 53
-Info (12128): Elaborating entity "drawLine_control" for hierarchy "line_drawer:draw_unit|drawLine_control:c_unit" File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/line_drawer.sv Line: 34
-Info (12128): Elaborating entity "drawLine_datapath" for hierarchy "line_drawer:draw_unit|drawLine_datapath:d_unit" File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/line_drawer.sv Line: 35
-Warning (10230): Verilog HDL assignment warning at drawLine_datapath.sv(74): truncated value with size 32 to match size of target (11) File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/drawLine_datapath.sv Line: 74
-Warning (10230): Verilog HDL assignment warning at drawLine_datapath.sv(77): truncated value with size 11 to match size of target (10) File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/drawLine_datapath.sv Line: 77
-Warning (10230): Verilog HDL assignment warning at drawLine_datapath.sv(78): truncated value with size 11 to match size of target (9) File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/drawLine_datapath.sv Line: 78
-Warning (10230): Verilog HDL assignment warning at drawLine_datapath.sv(85): truncated value with size 32 to match size of target (11) File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/drawLine_datapath.sv Line: 85
-Warning (10230): Verilog HDL assignment warning at drawLine_datapath.sv(95): truncated value with size 32 to match size of target (11) File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/drawLine_datapath.sv Line: 95
-Info (12128): Elaborating entity "video_driver" for hierarchy "video_driver:v1" File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 58
+Info (12128): Elaborating entity "clock_divider" for hierarchy "clock_divider:cdiv" File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 35
+Info (12128): Elaborating entity "playerControl" for hierarchy "playerControl:player_unit" File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 61
+Warning (10036): Verilog HDL or VHDL warning at playerControl.sv(7): object "inputReg" assigned a value but never read File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/playerControl.sv Line: 7
+Warning (10230): Verilog HDL assignment warning at playerControl.sv(21): truncated value with size 32 to match size of target (9) File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/playerControl.sv Line: 21
+Warning (10230): Verilog HDL assignment warning at playerControl.sv(22): truncated value with size 32 to match size of target (9) File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/playerControl.sv Line: 22
+Warning (10230): Verilog HDL assignment warning at playerControl.sv(25): truncated value with size 32 to match size of target (9) File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/playerControl.sv Line: 25
+Warning (10230): Verilog HDL assignment warning at playerControl.sv(26): truncated value with size 32 to match size of target (9) File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/playerControl.sv Line: 26
+Warning (10230): Verilog HDL assignment warning at playerControl.sv(29): truncated value with size 32 to match size of target (10) File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/playerControl.sv Line: 29
+Warning (10230): Verilog HDL assignment warning at playerControl.sv(30): truncated value with size 32 to match size of target (10) File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/playerControl.sv Line: 30
+Warning (10230): Verilog HDL assignment warning at playerControl.sv(33): truncated value with size 32 to match size of target (10) File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/playerControl.sv Line: 33
+Warning (10230): Verilog HDL assignment warning at playerControl.sv(34): truncated value with size 32 to match size of target (10) File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/playerControl.sv Line: 34
+Info (12128): Elaborating entity "video_driver" for hierarchy "video_driver:v1" File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 66
 Info (12128): Elaborating entity "CLOCK25_PLL" for hierarchy "video_driver:v1|CLOCK25_PLL:c25_gen" File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/video_driver.sv Line: 47
 Info (12128): Elaborating entity "CLOCK25_PLL_0002" for hierarchy "video_driver:v1|CLOCK25_PLL:c25_gen|CLOCK25_PLL_0002:clock25_pll_inst" File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/CLOCK25_PLL.v Line: 20
 Info (12128): Elaborating entity "altera_pll" for hierarchy "video_driver:v1|CLOCK25_PLL:c25_gen|CLOCK25_PLL_0002:clock25_pll_inst|altera_pll:altera_pll_i" File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/CLOCK25_PLL/CLOCK25_PLL_0002.v Line: 85
@@ -662,59 +798,91 @@ Info (12133): Instantiated megafunction "video_driver:v1|CLOCK25_PLL:c25_gen|CLO
     Info (12134): Parameter "pll_type" = "General"
     Info (12134): Parameter "pll_subtype" = "General"
 Info (12128): Elaborating entity "altera_up_avalon_video_vga_timing" for hierarchy "video_driver:v1|altera_up_avalon_video_vga_timing:video" File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/video_driver.sv Line: 147
-Error (12014): Net "x[7]", which fans out to "g[7]", cannot be assigned more than one value File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 19
-    Error (12015): Net is fed by "line_drawer:draw_unit|x[7]" File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/line_drawer.sv Line: 25
-    Error (12015): Net is fed by "video_driver:v1|x[7]" File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/video_driver.sv Line: 51
-Error (12014): Net "x[6]", which fans out to "g[6]", cannot be assigned more than one value File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 19
-    Error (12015): Net is fed by "line_drawer:draw_unit|x[6]" File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/line_drawer.sv Line: 25
-    Error (12015): Net is fed by "video_driver:v1|x[6]" File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/video_driver.sv Line: 51
-Error (12014): Net "x[5]", which fans out to "g[5]", cannot be assigned more than one value File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 19
-    Error (12015): Net is fed by "line_drawer:draw_unit|x[5]" File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/line_drawer.sv Line: 25
-    Error (12015): Net is fed by "video_driver:v1|x[5]" File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/video_driver.sv Line: 51
-Error (12014): Net "x[4]", which fans out to "g[4]", cannot be assigned more than one value File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 19
-    Error (12015): Net is fed by "line_drawer:draw_unit|x[4]" File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/line_drawer.sv Line: 25
-    Error (12015): Net is fed by "video_driver:v1|x[4]" File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/video_driver.sv Line: 51
-Error (12014): Net "x[3]", which fans out to "g[3]", cannot be assigned more than one value File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 19
-    Error (12015): Net is fed by "line_drawer:draw_unit|x[3]" File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/line_drawer.sv Line: 25
-    Error (12015): Net is fed by "video_driver:v1|x[3]" File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/video_driver.sv Line: 51
-Error (12014): Net "x[2]", which fans out to "g[2]", cannot be assigned more than one value File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 19
-    Error (12015): Net is fed by "line_drawer:draw_unit|x[2]" File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/line_drawer.sv Line: 25
-    Error (12015): Net is fed by "video_driver:v1|x[2]" File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/video_driver.sv Line: 51
-Error (12014): Net "x[1]", which fans out to "g[1]", cannot be assigned more than one value File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 19
-    Error (12015): Net is fed by "line_drawer:draw_unit|x[1]" File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/line_drawer.sv Line: 25
-    Error (12015): Net is fed by "video_driver:v1|x[1]" File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/video_driver.sv Line: 51
-Error (12014): Net "x[0]", which fans out to "g[0]", cannot be assigned more than one value File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 19
-    Error (12015): Net is fed by "line_drawer:draw_unit|x[0]" File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/line_drawer.sv Line: 25
-    Error (12015): Net is fed by "video_driver:v1|x[0]" File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/video_driver.sv Line: 51
-Error (12014): Net "y[7]", which fans out to "b[7]", cannot be assigned more than one value File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 20
-    Error (12015): Net is fed by "line_drawer:draw_unit|y[7]" File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/line_drawer.sv Line: 24
-    Error (12015): Net is fed by "video_driver:v1|y[7]" File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/video_driver.sv Line: 51
-Error (12014): Net "y[6]", which fans out to "b[6]", cannot be assigned more than one value File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 20
-    Error (12015): Net is fed by "line_drawer:draw_unit|y[6]" File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/line_drawer.sv Line: 24
-    Error (12015): Net is fed by "video_driver:v1|y[6]" File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/video_driver.sv Line: 51
-Error (12014): Net "y[5]", which fans out to "b[5]", cannot be assigned more than one value File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 20
-    Error (12015): Net is fed by "line_drawer:draw_unit|y[5]" File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/line_drawer.sv Line: 24
-    Error (12015): Net is fed by "video_driver:v1|y[5]" File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/video_driver.sv Line: 51
-Error (12014): Net "y[4]", which fans out to "b[4]", cannot be assigned more than one value File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 20
-    Error (12015): Net is fed by "line_drawer:draw_unit|y[4]" File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/line_drawer.sv Line: 24
-    Error (12015): Net is fed by "video_driver:v1|y[4]" File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/video_driver.sv Line: 51
-Error (12014): Net "y[3]", which fans out to "b[3]", cannot be assigned more than one value File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 20
-    Error (12015): Net is fed by "line_drawer:draw_unit|y[3]" File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/line_drawer.sv Line: 24
-    Error (12015): Net is fed by "video_driver:v1|y[3]" File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/video_driver.sv Line: 51
-Error (12014): Net "y[2]", which fans out to "b[2]", cannot be assigned more than one value File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 20
-    Error (12015): Net is fed by "line_drawer:draw_unit|y[2]" File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/line_drawer.sv Line: 24
-    Error (12015): Net is fed by "video_driver:v1|y[2]" File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/video_driver.sv Line: 51
-Error (12014): Net "y[1]", which fans out to "b[1]", cannot be assigned more than one value File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 20
-    Error (12015): Net is fed by "line_drawer:draw_unit|y[1]" File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/line_drawer.sv Line: 24
-    Error (12015): Net is fed by "video_driver:v1|y[1]" File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/video_driver.sv Line: 51
-Error (12014): Net "y[0]", which fans out to "b[0]", cannot be assigned more than one value File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 20
-    Error (12015): Net is fed by "line_drawer:draw_unit|y[0]" File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/line_drawer.sv Line: 24
-    Error (12015): Net is fed by "video_driver:v1|y[0]" File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/video_driver.sv Line: 51
-Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
-Error: Quartus Prime Analysis & Synthesis was unsuccessful. 48 errors, 22 warnings
-    Error: Peak virtual memory: 4772 megabytes
-    Error: Processing ended: Thu May 26 01:36:22 2022
-    Error: Elapsed time: 00:00:12
-    Error: Total CPU time (on all processors): 00:00:24
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "HEX0[0]" is stuck at VCC File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 3
+    Warning (13410): Pin "HEX0[1]" is stuck at VCC File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 3
+    Warning (13410): Pin "HEX0[2]" is stuck at VCC File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 3
+    Warning (13410): Pin "HEX0[3]" is stuck at VCC File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 3
+    Warning (13410): Pin "HEX0[4]" is stuck at VCC File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 3
+    Warning (13410): Pin "HEX0[5]" is stuck at VCC File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 3
+    Warning (13410): Pin "HEX0[6]" is stuck at VCC File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 3
+    Warning (13410): Pin "HEX1[0]" is stuck at VCC File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 3
+    Warning (13410): Pin "HEX1[1]" is stuck at VCC File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 3
+    Warning (13410): Pin "HEX1[2]" is stuck at VCC File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 3
+    Warning (13410): Pin "HEX1[3]" is stuck at VCC File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 3
+    Warning (13410): Pin "HEX1[4]" is stuck at VCC File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 3
+    Warning (13410): Pin "HEX1[5]" is stuck at VCC File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 3
+    Warning (13410): Pin "HEX1[6]" is stuck at VCC File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 3
+    Warning (13410): Pin "HEX2[0]" is stuck at VCC File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 3
+    Warning (13410): Pin "HEX2[1]" is stuck at VCC File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 3
+    Warning (13410): Pin "HEX2[2]" is stuck at VCC File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 3
+    Warning (13410): Pin "HEX2[3]" is stuck at VCC File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 3
+    Warning (13410): Pin "HEX2[4]" is stuck at VCC File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 3
+    Warning (13410): Pin "HEX2[5]" is stuck at VCC File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 3
+    Warning (13410): Pin "HEX2[6]" is stuck at VCC File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 3
+    Warning (13410): Pin "HEX3[0]" is stuck at VCC File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 3
+    Warning (13410): Pin "HEX3[1]" is stuck at VCC File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 3
+    Warning (13410): Pin "HEX3[2]" is stuck at VCC File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 3
+    Warning (13410): Pin "HEX3[3]" is stuck at VCC File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 3
+    Warning (13410): Pin "HEX3[4]" is stuck at VCC File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 3
+    Warning (13410): Pin "HEX3[5]" is stuck at VCC File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 3
+    Warning (13410): Pin "HEX3[6]" is stuck at VCC File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 3
+    Warning (13410): Pin "HEX4[0]" is stuck at VCC File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 3
+    Warning (13410): Pin "HEX4[1]" is stuck at VCC File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 3
+    Warning (13410): Pin "HEX4[2]" is stuck at VCC File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 3
+    Warning (13410): Pin "HEX4[3]" is stuck at VCC File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 3
+    Warning (13410): Pin "HEX4[4]" is stuck at VCC File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 3
+    Warning (13410): Pin "HEX4[5]" is stuck at VCC File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 3
+    Warning (13410): Pin "HEX4[6]" is stuck at VCC File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 3
+    Warning (13410): Pin "HEX5[0]" is stuck at VCC File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 3
+    Warning (13410): Pin "HEX5[1]" is stuck at VCC File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 3
+    Warning (13410): Pin "HEX5[2]" is stuck at VCC File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 3
+    Warning (13410): Pin "HEX5[3]" is stuck at VCC File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 3
+    Warning (13410): Pin "HEX5[4]" is stuck at VCC File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 3
+    Warning (13410): Pin "HEX5[5]" is stuck at VCC File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 3
+    Warning (13410): Pin "HEX5[6]" is stuck at VCC File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 3
+    Warning (13410): Pin "LEDR[0]" is stuck at GND File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 4
+    Warning (13410): Pin "LEDR[1]" is stuck at GND File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 4
+    Warning (13410): Pin "LEDR[2]" is stuck at GND File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 4
+    Warning (13410): Pin "LEDR[3]" is stuck at GND File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 4
+    Warning (13410): Pin "LEDR[4]" is stuck at GND File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 4
+    Warning (13410): Pin "LEDR[5]" is stuck at GND File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 4
+    Warning (13410): Pin "LEDR[6]" is stuck at GND File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 4
+    Warning (13410): Pin "LEDR[7]" is stuck at GND File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 4
+    Warning (13410): Pin "LEDR[8]" is stuck at GND File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 4
+    Warning (13410): Pin "LEDR[9]" is stuck at GND File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 4
+    Warning (13410): Pin "VGA_R[0]" is stuck at GND File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 9
+    Warning (13410): Pin "VGA_R[1]" is stuck at GND File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 9
+    Warning (13410): Pin "VGA_R[2]" is stuck at GND File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 9
+    Warning (13410): Pin "VGA_R[3]" is stuck at GND File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 9
+    Warning (13410): Pin "VGA_R[4]" is stuck at GND File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 9
+    Warning (13410): Pin "VGA_R[5]" is stuck at GND File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 9
+    Warning (13410): Pin "VGA_R[6]" is stuck at GND File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 9
+    Warning (13410): Pin "VGA_R[7]" is stuck at GND File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 9
+    Warning (13410): Pin "VGA_SYNC_N" is stuck at GND File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 15
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 9 registers lost all their fanouts during netlist optimizations.
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 5 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 9 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "SW[0]" File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 6
+    Warning (15610): No output dependent on input pin "SW[1]" File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 6
+    Warning (15610): No output dependent on input pin "SW[2]" File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 6
+    Warning (15610): No output dependent on input pin "SW[3]" File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 6
+    Warning (15610): No output dependent on input pin "SW[4]" File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 6
+    Warning (15610): No output dependent on input pin "SW[5]" File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 6
+    Warning (15610): No output dependent on input pin "SW[6]" File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 6
+    Warning (15610): No output dependent on input pin "SW[7]" File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 6
+    Warning (15610): No output dependent on input pin "SW[8]" File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 6
+Info (21057): Implemented 340 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 15 input pins
+    Info (21059): Implemented 81 output pins
+    Info (21061): Implemented 243 logic cells
+    Info (21065): Implemented 1 PLLs
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 86 warnings
+    Info: Peak virtual memory: 4828 megabytes
+    Info: Processing ended: Thu May 26 15:07:37 2022
+    Info: Elapsed time: 00:00:16
+    Info: Total CPU time (on all processors): 00:00:29
 
 

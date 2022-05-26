@@ -16,41 +16,49 @@ module DE1_SoC (HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, KEY, LEDR, SW,
 	output VGA_VS;
 
 	logic reset;
-	logic [9:0] x;
-	logic [8:0] y;
+	logic [9:0] x, leftBound, rightBound;
+	logic [8:0] y, topBound, botBound;
 	logic [7:0] r, g, b;
 	
 	logic [31:0] div_clk;
 	
+	logic [59:0]currLevel[79:0];
+	
+	assign currLevel[30] = {80{1'b1}};
+	
+	
 	//Clock select for divided clock to slow down animations
-	assign clkSelect = div_clk[17];
+	assign clkSelect = div_clk[20];
 
 	clock_divider cdiv (.clock(CLOCK_50),
 	.reset(~KEY[3]),
 	.divided_clocks(div_clk));
-
-	logic reset_wire, screenWipe_start_wire, screenWipe_start;
-	logic ready_SCW, done_SCW;
 	
-	logic [8:0] y0, y1, y0_SCW, y1_SCW;		
-   logic [9:0] x0, x1, x0_SCW, x1_SCW;
+//	always_ff @(posedge CLOCK_50) begin
+//		if(y > 100)begin
+//			r <= 255;
+//		end
+//	end
+
+	logic reset_wire, up, down, left, right, up_wire, down_wire, left_wire, right_wire;
+
 	always_ff @(posedge CLOCK_50)begin
 		//reset for line drawer
-		reset_wire <= ~KEY[3];
+		reset_wire <= ~SW[9];
 		reset <= reset_wire;
 
-		screenWipe_start_wire <= ~KEY[0];
-		screenWipe_start <= screenWipe_start_wire;
+		up_wire <= ~KEY[3];
+		down_wire <= ~KEY[2];
+		left_wire <= ~KEY[1];
+		right_wire <= ~KEY[0];
+
+		up <= up_wire;
+		down <= down_wire;
+		left <= left_wire;
+		right <= right_wire;
+
 	end //always_ff
-
-	screenWipe(.clk(clkSelect), .reset, .start(screenWipe_start), .ready(ready_SCW), .done(done_SCW), .x0(x0_SCW), .y0(y0_CSW), .x1(x1_SCW), .y1(y1_SCW));
-
-	assign x0 = ready_SCW ? 0:x0_SCW;
-	assign y0 = ready_SCW ? 0:y0_SCW; 
-	assign x1 = ready_SCW ? 100:x1_SCW;
-	assign y1 = ready_SCW ? 100:y1_SCW; 
-
-	line_drawer draw_unit(.clk(CLOCK_50), .reset, .x0, .y0, .x1, .y1, .x, .y);
+	playerControl player_unit (.clk(clkSelect), .reset, .up, .down, .left, .right, .topBound, .botBound, .leftBound, .rightBound);
 
 	video_driver #(.WIDTH(640), .HEIGHT(480))
 		v1 (.CLOCK_50, .reset, .x, .y, .r, .g, .b,
@@ -58,9 +66,25 @@ module DE1_SoC (HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, KEY, LEDR, SW,
 			 .VGA_CLK, .VGA_HS, .VGA_SYNC_N, .VGA_VS);
 	
 	always_ff @(posedge CLOCK_50) begin
-		r <= SW[7:0];
-		g <= x[7:0];
-		b <= y[7:0];
+		// r <= SW[7:0];
+		// g <= x[7:0];
+		// b <= y[7:0];
+		if(y < topBound & y >= botBound & x >= leftBound & x < rightBound) begin
+			r <= 0;
+			b <= 0;
+			g <= 255;
+		end
+		else if ((y >> 3) == 30) begin
+			r <= 0;
+			b <= (255);
+			g <= 0;
+		end
+		else begin
+		    r <= 0;
+			b <= (0);
+			g <= 0;
+		end
+
 	end
 	
 	assign HEX0 = '1;
