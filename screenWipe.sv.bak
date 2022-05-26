@@ -1,0 +1,11 @@
+module screenWipe(clk, reset, start, ready, done, x0, y0, x1, y1);
+    input logic clk, resetl
+    input logic start;
+
+    output logic ready, done;
+    output logic [10:0] x0, y0, x1, y1;
+
+    screenWipe_Control(.*);
+    screenWipe_Datapath(.*);
+
+endmodule
