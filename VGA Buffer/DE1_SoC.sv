@@ -58,7 +58,7 @@ module DE1_SoC (HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, KEY, LEDR, SW,
 		right <= right_wire;
 
 	end //always_ff
-	playerControl player_unit (.clk(clkSelect), .reset, .up, .down, .left, .right, .topBound, .botBound, .leftBound, .rightBound);
+	playerControl player_unit (.clk(clkSelect), .reset, .up, .down, .left, .right, .currLevel, .topBound, .botBound, .leftBound, .rightBound);
 
 	video_driver #(.WIDTH(640), .HEIGHT(480))
 		v1 (.CLOCK_50, .reset, .x, .y, .r, .g, .b,
@@ -74,7 +74,7 @@ module DE1_SoC (HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, KEY, LEDR, SW,
 			b <= 0;
 			g <= 255;
 		end
-		else if ((y >> 3) == 30) begin
+		else if (currLevel[y>>3][x>>3]) begin
 			r <= 0;
 			b <= (255);
 			g <= 0;
