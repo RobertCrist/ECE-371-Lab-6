@@ -60,5 +60,6 @@ set_global_assignment -name QIP_FILE "VGA Buffer/CLOCK25_PLL.qip"
 set_global_assignment -name SOURCE_FILE "VGA Buffer/CLOCK25_PLL.cmp"
 set_global_assignment -name VERILOG_FILE "VGA Buffer/altera_up_avalon_video_vga_timing.v"
 set_global_assignment -name SYSTEMVERILOG_FILE playerControl.sv
-set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
 set_global_assignment -name MIF_FILE mazeData.mif
+set_global_assignment -name QIP_FILE mazeMemory.qip
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

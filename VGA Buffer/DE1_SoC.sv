@@ -22,10 +22,24 @@ module DE1_SoC (HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, KEY, LEDR, SW,
 	
 	logic [31:0] div_clk;
 	
-	logic [59:0]currLevel[79:0];
+	logic [79:0]currLevel[59:0];
+	//logic [79:0] drawRow, hitDectectRow;
+	genvar i;
+	generate 
+		for(i = 0; i < 29; i++) begin: loop1
+			assign currLevel[i] = 80'b0;
+		end
+	endgenerate
 	
-	assign currLevel[30] = {80{1'b1}};
+	generate 
+		for(i = 32; i < 60; i++) begin: loop2
+			assign currLevel[i] = 80'b0;
+		end
+	endgenerate
 	
+	assign currLevel[29] = {{30{1'b1}}, {20{1'b0}}, {30{1'b1}}};
+	assign currLevel[30] = {{30{1'b1}}, {20{1'b0}}, {30{1'b1}}};
+	assign currLevel[31] = {{30{1'b1}}, {20{1'b0}}, {30{1'b1}}};
 	
 	//Clock select for divided clock to slow down animations
 	assign clkSelect = div_clk[20];
@@ -44,11 +58,11 @@ module DE1_SoC (HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, KEY, LEDR, SW,
 
 	always_ff @(posedge CLOCK_50)begin
 		//reset for line drawer
-		reset_wire <= ~SW[9];
+		reset_wire <= SW[9];
 		reset <= reset_wire;
 
-		up_wire <= ~KEY[3];
-		down_wire <= ~KEY[2];
+		up_wire <= ~KEY[2];
+		down_wire <= ~KEY[3];
 		left_wire <= ~KEY[1];
 		right_wire <= ~KEY[0];
 
@@ -58,7 +72,10 @@ module DE1_SoC (HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, KEY, LEDR, SW,
 		right <= right_wire;
 
 	end //always_ff
-	playerControl player_unit (.clk(clkSelect), .reset, .up, .down, .left, .right, .currLevel, .topBound, .botBound, .leftBound, .rightBound);
+	
+	//mazeMemory(.address_a(y>>3), .address_b(), .clock(CLOCK_50), .q_a(drawRow), .q_b(currLevel));
+	
+	playerControl player_unit (.clk(clkSelect), .reset, .up, .down, .left, .right, .currLevel(currLevel), .topBound, .botBound, .leftBound, .rightBound);
 
 	video_driver #(.WIDTH(640), .HEIGHT(480))
 		v1 (.CLOCK_50, .reset, .x, .y, .r, .g, .b,
@@ -69,7 +86,12 @@ module DE1_SoC (HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, KEY, LEDR, SW,
 		// r <= SW[7:0];
 		// g <= x[7:0];
 		// b <= y[7:0];
-		if(y < topBound & y >= botBound & x >= leftBound & x < rightBound) begin
+		if(y == topBound & x == leftBound) begin
+		    r <= 255;
+			b <= 0;
+			g <= 0;
+		end 
+		else if(y <= topBound & y >= botBound & x >= leftBound & x <= rightBound) begin
 			r <= 0;
 			b <= 0;
 			g <= 255;
