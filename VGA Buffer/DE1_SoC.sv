@@ -15,7 +15,7 @@ module DE1_SoC (HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, KEY, LEDR, SW,
 	output VGA_SYNC_N;
 	output VGA_VS;
 
-	logic reset;
+	logic reset, ready;
 	logic [9:0] x, leftBound, rightBound;
 	logic [8:0] y, topBound, botBound;
 	logic [7:0] r, g, b;
@@ -24,24 +24,25 @@ module DE1_SoC (HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, KEY, LEDR, SW,
 	
 	logic [79:0]currLevel[59:0];
 	//logic [79:0] drawRow, hitDectectRow;
-	genvar i;
-	generate 
-		for(i = 0; i < 29; i++) begin: loop1
-			assign currLevel[i] = 80'b0;
-		end
-	endgenerate
-	
-	generate 
-		for(i = 32; i < 60; i++) begin: loop2
-			assign currLevel[i] = 80'b0;
-		end
-	endgenerate
-	
-	assign currLevel[29] = {{30{1'b1}}, {20{1'b0}}, {30{1'b1}}};
-	assign currLevel[30] = {{30{1'b1}}, {20{1'b0}}, {30{1'b1}}};
-	assign currLevel[31] = {{30{1'b1}}, {20{1'b0}}, {30{1'b1}}};
+//	genvar i;
+//	generate 
+//		for(i = 0; i < 29; i++) begin: loop1
+//			assign currLevel[i] = 80'b0;
+//		end
+//	endgenerate
+//	
+//	generate 
+//		for(i = 32; i < 60; i++) begin: loop2
+//			assign currLevel[i] = 80'b0;
+//		end
+//	endgenerate
+//	
+//	assign currLevel[29] = {{30{1'b1}}, {20{1'b0}}, {30{1'b1}}};
+//	assign currLevel[30] = {{30{1'b1}}, {20{1'b0}}, {30{1'b1}}};
+//	assign currLevel[31] = {{30{1'b1}}, {20{1'b0}}, {30{1'b1}}};
 	
 	//Clock select for divided clock to slow down animations
+	logic clkSelect;
 	assign clkSelect = div_clk[20];
 
 	clock_divider cdiv (.clock(CLOCK_50),
@@ -54,7 +55,9 @@ module DE1_SoC (HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, KEY, LEDR, SW,
 //		end
 //	end
 
-	logic reset_wire, up, down, left, right, up_wire, down_wire, left_wire, right_wire;
+	logic reset_wire, up, down, left, right, up_wire, down_wire, left_wire, right_wire, start, start_wire, levelSel, levelSel_wire;
+	logic [5:0] regLoc0, regLoc1;
+	logic [6:0] memAddr0, memAddr1;
 
 	always_ff @(posedge CLOCK_50)begin
 		//reset for line drawer
@@ -71,12 +74,19 @@ module DE1_SoC (HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, KEY, LEDR, SW,
 		left <= left_wire;
 		right <= right_wire;
 
+		start_wire <= SW[0];
+		start <= start_wire;
+
+		levelSel_wire <= SW[1];
+		levelSel <= levelSel_wire;
 	end //always_ff
 	
 	//mazeMemory(.address_a(y>>3), .address_b(), .clock(CLOCK_50), .q_a(drawRow), .q_b(currLevel));
 	
 	playerControl player_unit (.clk(clkSelect), .reset, .up, .down, .left, .right, .currLevel(currLevel), .topBound, .botBound, .leftBound, .rightBound);
 
+	loadLevel(.clk(CLOCK_50), .reset, .start, .levelSel, .currLevel, .ready, .done());
+	
 	video_driver #(.WIDTH(640), .HEIGHT(480))
 		v1 (.CLOCK_50, .reset, .x, .y, .r, .g, .b,
 			 .VGA_R, .VGA_G, .VGA_B, .VGA_BLANK_N,
@@ -108,6 +118,7 @@ module DE1_SoC (HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, KEY, LEDR, SW,
 		end
 
 	end
+	
 	
 	assign HEX0 = '1;
 	assign HEX1 = '1;
