@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Lab6
-Thu Jun 02 02:06:47 2022
+Fri Jun 03 02:30:50 2022
 Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 
 
@@ -57,7 +57,7 @@ agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Thu Jun 02 02:06:47 2022       ;
+; Analysis & Synthesis Status     ; Successful - Fri Jun 03 02:30:50 2022       ;
 ; Quartus Prime Version           ; 17.0.0 Build 595 04/25/2017 SJ Lite Edition ;
 ; Revision Name                   ; Lab6                                        ;
 ; Top-level Entity Name           ; DE1_SoC                                     ;
@@ -172,14 +172,14 @@ agreement for further details.
 ; Number detected on machine ; 4           ;
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
-; Average used               ; 2.03        ;
+; Average used               ; 1.89        ;
 ; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;  36.5%      ;
-;     Processor 3            ;  36.5%      ;
-;     Processor 4            ;  30.3%      ;
+;     Processor 2            ;  33.8%      ;
+;     Processor 3            ;  33.8%      ;
+;     Processor 4            ;  21.5%      ;
 +----------------------------+-------------+
 
 
@@ -825,7 +825,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
-    Info: Processing started: Thu Jun 02 02:06:15 2022
+    Info: Processing started: Fri Jun 03 02:30:16 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Lab6 -c Lab6
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -1043,9 +1043,9 @@ Info (21057): Implemented 13632 device resources after synthesis - the final res
     Info (21064): Implemented 80 RAM segments
     Info (21065): Implemented 1 PLLs
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 78 warnings
-    Info: Peak virtual memory: 4924 megabytes
-    Info: Processing ended: Thu Jun 02 02:06:47 2022
-    Info: Elapsed time: 00:00:32
-    Info: Total CPU time (on all processors): 00:00:53
+    Info: Peak virtual memory: 4922 megabytes
+    Info: Processing ended: Fri Jun 03 02:30:50 2022
+    Info: Elapsed time: 00:00:34
+    Info: Total CPU time (on all processors): 00:00:51
 
 
