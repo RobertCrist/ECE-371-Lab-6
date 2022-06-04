@@ -1,51 +1,46 @@
 |DE1_SoC
-HEX0[0] <= <VCC>
-HEX0[1] <= <VCC>
-HEX0[2] <= <VCC>
-HEX0[3] <= <VCC>
-HEX0[4] <= <VCC>
-HEX0[5] <= <VCC>
-HEX0[6] <= <VCC>
-HEX1[0] <= <VCC>
-HEX1[1] <= <VCC>
-HEX1[2] <= <VCC>
-HEX1[3] <= <VCC>
-HEX1[4] <= <VCC>
-HEX1[5] <= <VCC>
-HEX1[6] <= <VCC>
-HEX2[0] <= <VCC>
-HEX2[1] <= <VCC>
-HEX2[2] <= <VCC>
-HEX2[3] <= <VCC>
-HEX2[4] <= <VCC>
-HEX2[5] <= <VCC>
-HEX2[6] <= <VCC>
-HEX3[0] <= <VCC>
-HEX3[1] <= <VCC>
-HEX3[2] <= <VCC>
-HEX3[3] <= <VCC>
-HEX3[4] <= <VCC>
-HEX3[5] <= <VCC>
-HEX3[6] <= <VCC>
-HEX4[0] <= <VCC>
-HEX4[1] <= <VCC>
-HEX4[2] <= <VCC>
-HEX4[3] <= <VCC>
-HEX4[4] <= <VCC>
-HEX4[5] <= <VCC>
-HEX4[6] <= <VCC>
-HEX5[0] <= <VCC>
-HEX5[1] <= <VCC>
-HEX5[2] <= <VCC>
-HEX5[3] <= <VCC>
-HEX5[4] <= <VCC>
-HEX5[5] <= <VCC>
-HEX5[6] <= <VCC>
-KEY[0] => right_wire.DATAIN
-KEY[1] => left_wire.DATAIN
-KEY[2] => up_wire.DATAIN
-KEY[3] => _.IN1
-KEY[3] => down_wire.DATAIN
+HEX0[0] <= <GND>
+HEX0[1] <= <GND>
+HEX0[2] <= <GND>
+HEX0[3] <= <GND>
+HEX0[4] <= <GND>
+HEX0[5] <= <GND>
+HEX0[6] <= <GND>
+HEX1[0] <= <GND>
+HEX1[1] <= <GND>
+HEX1[2] <= <GND>
+HEX1[3] <= <GND>
+HEX1[4] <= <GND>
+HEX1[5] <= <GND>
+HEX1[6] <= <GND>
+HEX2[0] <= <GND>
+HEX2[1] <= <GND>
+HEX2[2] <= <GND>
+HEX2[3] <= <GND>
+HEX2[4] <= <GND>
+HEX2[5] <= <GND>
+HEX2[6] <= <GND>
+HEX3[0] <= <GND>
+HEX3[1] <= <GND>
+HEX3[2] <= <GND>
+HEX3[3] <= <GND>
+HEX3[4] <= <GND>
+HEX3[5] <= <GND>
+HEX3[6] <= <GND>
+HEX4[0] <= <GND>
+HEX4[1] <= <GND>
+HEX4[2] <= <GND>
+HEX4[3] <= <GND>
+HEX4[4] <= <GND>
+HEX4[5] <= <GND>
+HEX4[6] <= <GND>
+HEX5[0] <= <GND>
+HEX5[1] <= <GND>
+HEX5[2] <= <GND>
+HEX5[3] <= <GND>
+HEX5[4] <= <GND>
+HEX5[5] <= <GND>
+HEX5[6] <= <GND>
 LEDR[0] <= <GND>
 LEDR[1] <= <GND>
 LEDR[2] <= <GND>
@@ -56,16 +51,6 @@ LEDR[6] <= <GND>
 LEDR[7] <= <GND>
 LEDR[8] <= <GND>
 LEDR[9] <= <GND>
-SW[0] => start_wire.DATAIN
-SW[1] => levelSel_wire.DATAIN
-SW[2] => ~NO_FANOUT~
-SW[3] => ~NO_FANOUT~
-SW[4] => ~NO_FANOUT~
-SW[5] => ~NO_FANOUT~
-SW[6] => ~NO_FANOUT~
-SW[7] => ~NO_FANOUT~
-SW[8] => ~NO_FANOUT~
-SW[9] => reset_wire.DATAIN
 CLOCK_50 => CLOCK_50.IN1
 VGA_R[0] <= video_driver:v1.VGA_R[0]
 VGA_R[1] <= video_driver:v1.VGA_R[1]
@@ -96,6 +81,22 @@ VGA_CLK <= video_driver:v1.VGA_CLK
 VGA_HS <= video_driver:v1.VGA_HS
 VGA_SYNC_N <= video_driver:v1.VGA_SYNC_N
 VGA_VS <= video_driver:v1.VGA_VS
+V_GPIO[26] <> V_GPIO[26]
+V_GPIO[27] <> V_GPIO[27]
+KEY[0] => ~NO_FANOUT~
+KEY[1] => ~NO_FANOUT~
+KEY[2] => ~NO_FANOUT~
+KEY[3] => ~NO_FANOUT~
+SW[0] => start_wire.DATAIN
+SW[1] => levelSel_wire.DATAIN
+SW[2] => ~NO_FANOUT~
+SW[3] => ~NO_FANOUT~
+SW[4] => ~NO_FANOUT~
+SW[5] => ~NO_FANOUT~
+SW[6] => ~NO_FANOUT~
+SW[7] => ~NO_FANOUT~
+SW[8] => ~NO_FANOUT~
+SW[9] => reset_wire.DATAIN
 
 
 |DE1_SoC|clock_divider:cdiv
@@ -164,6 +165,50 @@ divided_clocks[28] <= divided_clocks[28]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 divided_clocks[29] <= divided_clocks[29]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 divided_clocks[30] <= divided_clocks[30]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 divided_clocks[31] <= divided_clocks[31]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE1_SoC|n8_driver:driver
+clk => clk.IN1
+data_in => data_in.IN1
+latch <= serial_driver:driver.latch
+pulse <= serial_driver:driver.pulse
+up <= serial_driver:driver.data_out
+down <= serial_driver:driver.data_out
+left <= serial_driver:driver.data_out
+right <= serial_driver:driver.data_out
+select <= serial_driver:driver.data_out
+start <= serial_driver:driver.data_out
+a <= serial_driver:driver.data_out
+b <= serial_driver:driver.data_out
+
+
+|DE1_SoC|n8_driver:driver|serial_driver:driver
+clk => counter[0].CLK
+clk => counter[1].CLK
+clk => counter[2].CLK
+clk => counter[3].CLK
+clk => counter[4].CLK
+clk => counter[5].CLK
+clk => counter[6].CLK
+clk => counter[7].CLK
+clk => counter[8].CLK
+clk => counter[9].CLK
+clk => counter[10].CLK
+clk => counter[11].CLK
+clk => counter[12].CLK
+clk => counter[13].CLK
+clk => counter[14].CLK
+data_in => temp[0].DATAIN
+latch <= latch.DB_MAX_OUTPUT_PORT_TYPE
+pulse <= pulse.DB_MAX_OUTPUT_PORT_TYPE
+data_out[0] <= data_out[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data_out[1] <= data_out[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data_out[2] <= data_out[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data_out[3] <= data_out[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data_out[4] <= data_out[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data_out[5] <= data_out[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data_out[6] <= data_out[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data_out[7] <= data_out[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |DE1_SoC|playerControl:player_unit
@@ -19487,7 +19532,7 @@ rightBound[8] <= rightBound[8]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 rightBound[9] <= rightBound[9]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|DE1_SoC|loadLevel:comb_38
+|DE1_SoC|loadLevel:load
 clk => clk.IN1
 reset => loadLevel_Control:control_unit.reset
 start => loadLevel_Control:control_unit.start
@@ -24296,7 +24341,7 @@ ready <= loadLevel_Control:control_unit.ready
 done <= loadLevel_Control:control_unit.done
 
 
-|DE1_SoC|loadLevel:comb_38|loadLevel_Control:control_unit
+|DE1_SoC|loadLevel:load|loadLevel_Control:control_unit
 clk => count[0].CLK
 clk => count[1].CLK
 clk => count[2].CLK
@@ -24381,7 +24426,7 @@ ready <= Equal7.DB_MAX_OUTPUT_PORT_TYPE
 done <= Equal6.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|DE1_SoC|loadLevel:comb_38|mazeMemory:mem_unit
+|DE1_SoC|loadLevel:load|mazeMemory:mem_unit
 address_a[0] => address_a[0].IN1
 address_a[1] => address_a[1].IN1
 address_a[2] => address_a[2].IN1
@@ -24559,7 +24604,7 @@ q_b[78] <= altsyncram:altsyncram_component.q_b
 q_b[79] <= altsyncram:altsyncram_component.q_b
 
 
-|DE1_SoC|loadLevel:comb_38|mazeMemory:mem_unit|altsyncram:altsyncram_component
+|DE1_SoC|loadLevel:load|mazeMemory:mem_unit|altsyncram:altsyncram_component
 wren_a => ~NO_FANOUT~
 rden_a => ~NO_FANOUT~
 wren_b => ~NO_FANOUT~
@@ -24915,7 +24960,7 @@ eccstatus[1] <= <GND>
 eccstatus[2] <= <GND>
 
 
-|DE1_SoC|loadLevel:comb_38|mazeMemory:mem_unit|altsyncram:altsyncram_component|altsyncram_nib2:auto_generated
+|DE1_SoC|loadLevel:load|mazeMemory:mem_unit|altsyncram:altsyncram_component|altsyncram_nib2:auto_generated
 address_a[0] => ram_block1a0.PORTAADDR
 address_a[0] => ram_block1a1.PORTAADDR
 address_a[0] => ram_block1a2.PORTAADDR

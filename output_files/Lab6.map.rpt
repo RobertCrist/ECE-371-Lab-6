@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Lab6
-Fri Jun 03 02:30:50 2022
+Sat Jun 04 15:46:41 2022
 Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 
 
@@ -18,19 +18,21 @@ Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
  10. Registers Removed During Synthesis
  11. General Register Statistics
  12. Multiplexer Restructuring Statistics (Restructuring Performed)
- 13. Source assignments for loadLevel:comb_38|mazeMemory:mem_unit|altsyncram:altsyncram_component|altsyncram_nib2:auto_generated
- 14. Parameter Settings for User Entity Instance: loadLevel:comb_38|mazeMemory:mem_unit|altsyncram:altsyncram_component
- 15. Parameter Settings for User Entity Instance: video_driver:v1
- 16. Parameter Settings for User Entity Instance: video_driver:v1|CLOCK25_PLL:c25_gen|CLOCK25_PLL_0002:clock25_pll_inst|altera_pll:altera_pll_i
- 17. Parameter Settings for User Entity Instance: video_driver:v1|altera_up_avalon_video_vga_timing:video
- 18. altsyncram Parameter Settings by Entity Instance
- 19. Port Connectivity Checks: "video_driver:v1|altera_up_avalon_video_vga_timing:video"
- 20. Port Connectivity Checks: "video_driver:v1|CLOCK25_PLL:c25_gen"
- 21. Port Connectivity Checks: "loadLevel:comb_38"
- 22. Port Connectivity Checks: "clock_divider:cdiv"
- 23. Post-Synthesis Netlist Statistics for Top Partition
- 24. Elapsed Time Per Partition
- 25. Analysis & Synthesis Messages
+ 13. Source assignments for loadLevel:load|mazeMemory:mem_unit|altsyncram:altsyncram_component|altsyncram_nib2:auto_generated
+ 14. Parameter Settings for User Entity Instance: n8_driver:driver|serial_driver:driver
+ 15. Parameter Settings for User Entity Instance: loadLevel:load|mazeMemory:mem_unit|altsyncram:altsyncram_component
+ 16. Parameter Settings for User Entity Instance: video_driver:v1
+ 17. Parameter Settings for User Entity Instance: video_driver:v1|CLOCK25_PLL:c25_gen|CLOCK25_PLL_0002:clock25_pll_inst|altera_pll:altera_pll_i
+ 18. Parameter Settings for User Entity Instance: video_driver:v1|altera_up_avalon_video_vga_timing:video
+ 19. altsyncram Parameter Settings by Entity Instance
+ 20. Port Connectivity Checks: "video_driver:v1|altera_up_avalon_video_vga_timing:video"
+ 21. Port Connectivity Checks: "video_driver:v1|CLOCK25_PLL:c25_gen"
+ 22. Port Connectivity Checks: "loadLevel:load"
+ 23. Port Connectivity Checks: "n8_driver:driver"
+ 24. Port Connectivity Checks: "clock_divider:cdiv"
+ 25. Post-Synthesis Netlist Statistics for Top Partition
+ 26. Elapsed Time Per Partition
+ 27. Analysis & Synthesis Messages
 
 
 
@@ -57,14 +59,14 @@ agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Fri Jun 03 02:30:50 2022       ;
+; Analysis & Synthesis Status     ; Successful - Sat Jun 04 15:46:41 2022       ;
 ; Quartus Prime Version           ; 17.0.0 Build 595 04/25/2017 SJ Lite Edition ;
 ; Revision Name                   ; Lab6                                        ;
 ; Top-level Entity Name           ; DE1_SoC                                     ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 4995                                        ;
-; Total pins                      ; 96                                          ;
+; Total registers                 ; 5017                                        ;
+; Total pins                      ; 99                                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 9,600                                       ;
 ; Total DSP Blocks                ; 0                                           ;
@@ -169,48 +171,52 @@ agreement for further details.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 4           ;
-; Maximum allowed            ; 4           ;
+; Number detected on machine ; 12          ;
+; Maximum allowed            ; 6           ;
 ;                            ;             ;
-; Average used               ; 1.89        ;
-; Maximum used               ; 4           ;
+; Average used               ; 2.99        ;
+; Maximum used               ; 6           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;  33.8%      ;
-;     Processor 3            ;  33.8%      ;
-;     Processor 4            ;  21.5%      ;
+;     Processor 2            ;  39.9%      ;
+;     Processor 3            ;  39.9%      ;
+;     Processor 4            ;  39.9%      ;
+;     Processor 5            ;  39.8%      ;
+;     Processor 6            ;  39.8%      ;
 +----------------------------+-------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                                              ;
-+------------------------------------------------+-----------------+----------------------------------+-------------------------------------------------------------------------------------------------+-------------+
-; File Name with User-Entered Path               ; Used in Netlist ; File Type                        ; File Name with Absolute Path                                                                    ; Library     ;
-+------------------------------------------------+-----------------+----------------------------------+-------------------------------------------------------------------------------------------------+-------------+
-; clock_divider.sv                               ; yes             ; User SystemVerilog HDL File      ; E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/clock_divider.sv                               ;             ;
-; VGA Buffer/video_driver.sv                     ; yes             ; User SystemVerilog HDL File      ; E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/video_driver.sv                     ;             ;
-; VGA Buffer/DE1_SoC.sv                          ; yes             ; User SystemVerilog HDL File      ; E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv                          ;             ;
-; VGA Buffer/CLOCK25_PLL.v                       ; yes             ; User Wizard-Generated File       ; E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/CLOCK25_PLL.v                       ; CLOCK25_PLL ;
-; VGA Buffer/CLOCK25_PLL/CLOCK25_PLL_0002.v      ; yes             ; User Verilog HDL File            ; E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/CLOCK25_PLL/CLOCK25_PLL_0002.v      ; CLOCK25_PLL ;
-; VGA Buffer/altera_up_avalon_video_vga_timing.v ; yes             ; User Verilog HDL File            ; E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/altera_up_avalon_video_vga_timing.v ;             ;
-; playerControl.sv                               ; yes             ; User SystemVerilog HDL File      ; E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/playerControl.sv                               ;             ;
-; mazeData.mif                                   ; yes             ; User Memory Initialization File  ; E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/mazeData.mif                                   ;             ;
-; mazeMemory.v                                   ; yes             ; User Wizard-Generated File       ; E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/mazeMemory.v                                   ;             ;
-; loadLevel.sv                                   ; yes             ; User SystemVerilog HDL File      ; E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/loadLevel.sv                                   ;             ;
-; loadLevel_Control.sv                           ; yes             ; User SystemVerilog HDL File      ; E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/loadLevel_Control.sv                           ;             ;
-; altsyncram.tdf                                 ; yes             ; Megafunction                     ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/altsyncram.tdf                           ;             ;
-; stratix_ram_block.inc                          ; yes             ; Megafunction                     ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/stratix_ram_block.inc                    ;             ;
-; lpm_mux.inc                                    ; yes             ; Megafunction                     ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/lpm_mux.inc                              ;             ;
-; lpm_decode.inc                                 ; yes             ; Megafunction                     ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/lpm_decode.inc                           ;             ;
-; aglobal170.inc                                 ; yes             ; Megafunction                     ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/aglobal170.inc                           ;             ;
-; a_rdenreg.inc                                  ; yes             ; Megafunction                     ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/a_rdenreg.inc                            ;             ;
-; altrom.inc                                     ; yes             ; Megafunction                     ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/altrom.inc                               ;             ;
-; altram.inc                                     ; yes             ; Megafunction                     ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/altram.inc                               ;             ;
-; altdpram.inc                                   ; yes             ; Megafunction                     ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/altdpram.inc                             ;             ;
-; db/altsyncram_nib2.tdf                         ; yes             ; Auto-Generated Megafunction      ; E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/db/altsyncram_nib2.tdf                         ;             ;
-; altera_pll.v                                   ; yes             ; Megafunction                     ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/altera_pll.v                             ;             ;
-+------------------------------------------------+-----------------+----------------------------------+-------------------------------------------------------------------------------------------------+-------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                           ;
++------------------------------------------------+-----------------+----------------------------------+----------------------------------------------------------------------------------------------+-------------+
+; File Name with User-Entered Path               ; Used in Netlist ; File Type                        ; File Name with Absolute Path                                                                 ; Library     ;
++------------------------------------------------+-----------------+----------------------------------+----------------------------------------------------------------------------------------------+-------------+
+; serial_driver.sv                               ; yes             ; User SystemVerilog HDL File      ; C:/Users/corbd/Documents/GitHub/ECE-371-Lab-6/serial_driver.sv                               ;             ;
+; n8_driver.sv                                   ; yes             ; User SystemVerilog HDL File      ; C:/Users/corbd/Documents/GitHub/ECE-371-Lab-6/n8_driver.sv                                   ;             ;
+; clock_divider.sv                               ; yes             ; User SystemVerilog HDL File      ; C:/Users/corbd/Documents/GitHub/ECE-371-Lab-6/clock_divider.sv                               ;             ;
+; VGA Buffer/video_driver.sv                     ; yes             ; User SystemVerilog HDL File      ; C:/Users/corbd/Documents/GitHub/ECE-371-Lab-6/VGA Buffer/video_driver.sv                     ;             ;
+; VGA Buffer/DE1_SoC.sv                          ; yes             ; User SystemVerilog HDL File      ; C:/Users/corbd/Documents/GitHub/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv                          ;             ;
+; VGA Buffer/CLOCK25_PLL.v                       ; yes             ; User Wizard-Generated File       ; C:/Users/corbd/Documents/GitHub/ECE-371-Lab-6/VGA Buffer/CLOCK25_PLL.v                       ; CLOCK25_PLL ;
+; VGA Buffer/CLOCK25_PLL/CLOCK25_PLL_0002.v      ; yes             ; User Verilog HDL File            ; C:/Users/corbd/Documents/GitHub/ECE-371-Lab-6/VGA Buffer/CLOCK25_PLL/CLOCK25_PLL_0002.v      ; CLOCK25_PLL ;
+; VGA Buffer/altera_up_avalon_video_vga_timing.v ; yes             ; User Verilog HDL File            ; C:/Users/corbd/Documents/GitHub/ECE-371-Lab-6/VGA Buffer/altera_up_avalon_video_vga_timing.v ;             ;
+; playerControl.sv                               ; yes             ; User SystemVerilog HDL File      ; C:/Users/corbd/Documents/GitHub/ECE-371-Lab-6/playerControl.sv                               ;             ;
+; mazeData.mif                                   ; yes             ; User Memory Initialization File  ; C:/Users/corbd/Documents/GitHub/ECE-371-Lab-6/mazeData.mif                                   ;             ;
+; mazeMemory.v                                   ; yes             ; User Wizard-Generated File       ; C:/Users/corbd/Documents/GitHub/ECE-371-Lab-6/mazeMemory.v                                   ;             ;
+; loadLevel.sv                                   ; yes             ; User SystemVerilog HDL File      ; C:/Users/corbd/Documents/GitHub/ECE-371-Lab-6/loadLevel.sv                                   ;             ;
+; loadLevel_Control.sv                           ; yes             ; User SystemVerilog HDL File      ; C:/Users/corbd/Documents/GitHub/ECE-371-Lab-6/loadLevel_Control.sv                           ;             ;
+; altsyncram.tdf                                 ; yes             ; Megafunction                     ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/altsyncram.tdf                        ;             ;
+; stratix_ram_block.inc                          ; yes             ; Megafunction                     ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/stratix_ram_block.inc                 ;             ;
+; lpm_mux.inc                                    ; yes             ; Megafunction                     ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/lpm_mux.inc                           ;             ;
+; lpm_decode.inc                                 ; yes             ; Megafunction                     ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/lpm_decode.inc                        ;             ;
+; aglobal170.inc                                 ; yes             ; Megafunction                     ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/aglobal170.inc                        ;             ;
+; a_rdenreg.inc                                  ; yes             ; Megafunction                     ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/a_rdenreg.inc                         ;             ;
+; altrom.inc                                     ; yes             ; Megafunction                     ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/altrom.inc                            ;             ;
+; altram.inc                                     ; yes             ; Megafunction                     ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/altram.inc                            ;             ;
+; altdpram.inc                                   ; yes             ; Megafunction                     ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/altdpram.inc                          ;             ;
+; db/altsyncram_nib2.tdf                         ; yes             ; Auto-Generated Megafunction      ; C:/Users/corbd/Documents/GitHub/ECE-371-Lab-6/db/altsyncram_nib2.tdf                         ;             ;
+; altera_pll.v                                   ; yes             ; Megafunction                     ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/altera_pll.v                          ;             ;
++------------------------------------------------+-----------------+----------------------------------+----------------------------------------------------------------------------------------------+-------------+
 
 
 +--------------------------------------------------------------+
@@ -218,18 +224,18 @@ agreement for further details.
 +---------------------------------------------+----------------+
 ; Resource                                    ; Usage          ;
 +---------------------------------------------+----------------+
-; Estimate of Logic utilization (ALMs needed) ; 8787           ;
+; Estimate of Logic utilization (ALMs needed) ; 8793           ;
 ;                                             ;                ;
-; Combinational ALUT usage for logic          ; 8620           ;
+; Combinational ALUT usage for logic          ; 8645           ;
 ;     -- 7 input functions                    ; 977            ;
-;     -- 6 input functions                    ; 6710           ;
-;     -- 5 input functions                    ; 102            ;
-;     -- 4 input functions                    ; 581            ;
-;     -- <=3 input functions                  ; 250            ;
+;     -- 6 input functions                    ; 6700           ;
+;     -- 5 input functions                    ; 114            ;
+;     -- 4 input functions                    ; 576            ;
+;     -- <=3 input functions                  ; 278            ;
 ;                                             ;                ;
-; Dedicated logic registers                   ; 4995           ;
+; Dedicated logic registers                   ; 5017           ;
 ;                                             ;                ;
-; I/O pins                                    ; 96             ;
+; I/O pins                                    ; 99             ;
 ; Total MLAB memory bits                      ; 0              ;
 ; Total block memory bits                     ; 9600           ;
 ;                                             ;                ;
@@ -239,72 +245,75 @@ agreement for further details.
 ;     -- PLLs                                 ; 1              ;
 ;                                             ;                ;
 ; Maximum fan-out node                        ; CLOCK_50~input ;
-; Maximum fan-out                             ; 4926           ;
-; Total fan-out                               ; 66951          ;
-; Average fan-out                             ; 4.82           ;
+; Maximum fan-out                             ; 4931           ;
+; Total fan-out                               ; 67055          ;
+; Average fan-out                             ; 4.81           ;
 +---------------------------------------------+----------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                         ;
-+-------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------------------------------------------+-----------------------------------+--------------+
-; Compilation Hierarchy Node                      ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                           ; Entity Name                       ; Library Name ;
-+-------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------------------------------------------+-----------------------------------+--------------+
-; |DE1_SoC                                        ; 8620 (1493)         ; 4995 (17)                 ; 9600              ; 0          ; 96   ; 0            ; |DE1_SoC                                                                                                      ; DE1_SoC                           ; work         ;
-;    |clock_divider:cdiv|                         ; 21 (21)             ; 21 (21)                   ; 0                 ; 0          ; 0    ; 0            ; |DE1_SoC|clock_divider:cdiv                                                                                   ; clock_divider                     ; work         ;
-;    |loadLevel:comb_38|                          ; 64 (43)             ; 4807 (4800)               ; 9600              ; 0          ; 0    ; 0            ; |DE1_SoC|loadLevel:comb_38                                                                                    ; loadLevel                         ; work         ;
-;       |loadLevel_Control:control_unit|          ; 21 (21)             ; 7 (7)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SoC|loadLevel:comb_38|loadLevel_Control:control_unit                                                     ; loadLevel_Control                 ; work         ;
-;       |mazeMemory:mem_unit|                     ; 0 (0)               ; 0 (0)                     ; 9600              ; 0          ; 0    ; 0            ; |DE1_SoC|loadLevel:comb_38|mazeMemory:mem_unit                                                                ; mazeMemory                        ; work         ;
-;          |altsyncram:altsyncram_component|      ; 0 (0)               ; 0 (0)                     ; 9600              ; 0          ; 0    ; 0            ; |DE1_SoC|loadLevel:comb_38|mazeMemory:mem_unit|altsyncram:altsyncram_component                                ; altsyncram                        ; work         ;
-;             |altsyncram_nib2:auto_generated|    ; 0 (0)               ; 0 (0)                     ; 9600              ; 0          ; 0    ; 0            ; |DE1_SoC|loadLevel:comb_38|mazeMemory:mem_unit|altsyncram:altsyncram_component|altsyncram_nib2:auto_generated ; altsyncram_nib2                   ; work         ;
-;    |playerControl:player_unit|                  ; 6911 (6911)         ; 34 (34)                   ; 0                 ; 0          ; 0    ; 0            ; |DE1_SoC|playerControl:player_unit                                                                            ; playerControl                     ; work         ;
-;    |video_driver:v1|                            ; 131 (83)            ; 116 (61)                  ; 0                 ; 0          ; 0    ; 0            ; |DE1_SoC|video_driver:v1                                                                                      ; video_driver                      ; work         ;
-;       |CLOCK25_PLL:c25_gen|                     ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SoC|video_driver:v1|CLOCK25_PLL:c25_gen                                                                  ; CLOCK25_PLL                       ; CLOCK25_PLL  ;
-;          |CLOCK25_PLL_0002:clock25_pll_inst|    ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SoC|video_driver:v1|CLOCK25_PLL:c25_gen|CLOCK25_PLL_0002:clock25_pll_inst                                ; CLOCK25_PLL_0002                  ; CLOCK25_PLL  ;
-;             |altera_pll:altera_pll_i|           ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SoC|video_driver:v1|CLOCK25_PLL:c25_gen|CLOCK25_PLL_0002:clock25_pll_inst|altera_pll:altera_pll_i        ; altera_pll                        ; work         ;
-;       |altera_up_avalon_video_vga_timing:video| ; 48 (48)             ; 55 (55)                   ; 0                 ; 0          ; 0    ; 0            ; |DE1_SoC|video_driver:v1|altera_up_avalon_video_vga_timing:video                                              ; altera_up_avalon_video_vga_timing ; work         ;
-+-------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------------------------------------------+-----------------------------------+--------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                      ;
++-------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------------------------+-----------------------------------+--------------+
+; Compilation Hierarchy Node                      ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                        ; Entity Name                       ; Library Name ;
++-------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------------------------+-----------------------------------+--------------+
+; |DE1_SoC                                        ; 8645 (1489)         ; 5017 (8)                  ; 9600              ; 0          ; 99   ; 0            ; |DE1_SoC                                                                                                   ; DE1_SoC                           ; work         ;
+;    |clock_divider:cdiv|                         ; 20 (20)             ; 20 (20)                   ; 0                 ; 0          ; 0    ; 0            ; |DE1_SoC|clock_divider:cdiv                                                                                ; clock_divider                     ; work         ;
+;    |loadLevel:load|                             ; 63 (42)             ; 4807 (4800)               ; 9600              ; 0          ; 0    ; 0            ; |DE1_SoC|loadLevel:load                                                                                    ; loadLevel                         ; work         ;
+;       |loadLevel_Control:control_unit|          ; 21 (21)             ; 7 (7)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SoC|loadLevel:load|loadLevel_Control:control_unit                                                     ; loadLevel_Control                 ; work         ;
+;       |mazeMemory:mem_unit|                     ; 0 (0)               ; 0 (0)                     ; 9600              ; 0          ; 0    ; 0            ; |DE1_SoC|loadLevel:load|mazeMemory:mem_unit                                                                ; mazeMemory                        ; work         ;
+;          |altsyncram:altsyncram_component|      ; 0 (0)               ; 0 (0)                     ; 9600              ; 0          ; 0    ; 0            ; |DE1_SoC|loadLevel:load|mazeMemory:mem_unit|altsyncram:altsyncram_component                                ; altsyncram                        ; work         ;
+;             |altsyncram_nib2:auto_generated|    ; 0 (0)               ; 0 (0)                     ; 9600              ; 0          ; 0    ; 0            ; |DE1_SoC|loadLevel:load|mazeMemory:mem_unit|altsyncram:altsyncram_component|altsyncram_nib2:auto_generated ; altsyncram_nib2                   ; work         ;
+;    |n8_driver:driver|                           ; 31 (0)              ; 32 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |DE1_SoC|n8_driver:driver                                                                                  ; n8_driver                         ; work         ;
+;       |serial_driver:driver|                    ; 31 (31)             ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |DE1_SoC|n8_driver:driver|serial_driver:driver                                                             ; serial_driver                     ; work         ;
+;    |playerControl:player_unit|                  ; 6911 (6911)         ; 34 (34)                   ; 0                 ; 0          ; 0    ; 0            ; |DE1_SoC|playerControl:player_unit                                                                         ; playerControl                     ; work         ;
+;    |video_driver:v1|                            ; 131 (83)            ; 116 (61)                  ; 0                 ; 0          ; 0    ; 0            ; |DE1_SoC|video_driver:v1                                                                                   ; video_driver                      ; work         ;
+;       |CLOCK25_PLL:c25_gen|                     ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SoC|video_driver:v1|CLOCK25_PLL:c25_gen                                                               ; CLOCK25_PLL                       ; CLOCK25_PLL  ;
+;          |CLOCK25_PLL_0002:clock25_pll_inst|    ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SoC|video_driver:v1|CLOCK25_PLL:c25_gen|CLOCK25_PLL_0002:clock25_pll_inst                             ; CLOCK25_PLL_0002                  ; CLOCK25_PLL  ;
+;             |altera_pll:altera_pll_i|           ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SoC|video_driver:v1|CLOCK25_PLL:c25_gen|CLOCK25_PLL_0002:clock25_pll_inst|altera_pll:altera_pll_i     ; altera_pll                        ; work         ;
+;       |altera_up_avalon_video_vga_timing:video| ; 48 (48)             ; 55 (55)                   ; 0                 ; 0          ; 0    ; 0            ; |DE1_SoC|video_driver:v1|altera_up_avalon_video_vga_timing:video                                           ; altera_up_avalon_video_vga_timing ; work         ;
++-------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------------------------+-----------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis RAM Summary                                                                                                                                                                                                ;
-+-----------------------------------------------------------------------------------------------------------------+------------+----------------+--------------+--------------+--------------+--------------+------+--------------+
-; Name                                                                                                            ; Type       ; Mode           ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF          ;
-+-----------------------------------------------------------------------------------------------------------------+------------+----------------+--------------+--------------+--------------+--------------+------+--------------+
-; loadLevel:comb_38|mazeMemory:mem_unit|altsyncram:altsyncram_component|altsyncram_nib2:auto_generated|ALTSYNCRAM ; M10K block ; True Dual Port ; 120          ; 80           ; 120          ; 80           ; 9600 ; mazeData.mif ;
-+-----------------------------------------------------------------------------------------------------------------+------------+----------------+--------------+--------------+--------------+--------------+------+--------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                                             ;
++--------------------------------------------------------------------------------------------------------------+------------+----------------+--------------+--------------+--------------+--------------+------+--------------+
+; Name                                                                                                         ; Type       ; Mode           ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF          ;
++--------------------------------------------------------------------------------------------------------------+------------+----------------+--------------+--------------+--------------+--------------+------+--------------+
+; loadLevel:load|mazeMemory:mem_unit|altsyncram:altsyncram_component|altsyncram_nib2:auto_generated|ALTSYNCRAM ; M10K block ; True Dual Port ; 120          ; 80           ; 120          ; 80           ; 9600 ; mazeData.mif ;
++--------------------------------------------------------------------------------------------------------------+------------+----------------+--------------+--------------+--------------+--------------+------+--------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis IP Cores Summary                                                                                                     ;
-+--------+--------------+---------+--------------+--------------+------------------------------------------------+--------------------------+
-; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance                                ; IP Include File          ;
-+--------+--------------+---------+--------------+--------------+------------------------------------------------+--------------------------+
-; Altera ; ROM: 2-PORT  ; 17.0    ; N/A          ; N/A          ; |DE1_SoC|loadLevel:comb_38|mazeMemory:mem_unit ; mazeMemory.v             ;
-; Altera ; altera_pll   ; 17.0    ; N/A          ; N/A          ; |DE1_SoC|video_driver:v1|CLOCK25_PLL:c25_gen   ; VGA Buffer/CLOCK25_PLL.v ;
-+--------+--------------+---------+--------------+--------------+------------------------------------------------+--------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis IP Cores Summary                                                                                                   ;
++--------+--------------+---------+--------------+--------------+----------------------------------------------+--------------------------+
+; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance                              ; IP Include File          ;
++--------+--------------+---------+--------------+--------------+----------------------------------------------+--------------------------+
+; Altera ; ROM: 2-PORT  ; 17.0    ; N/A          ; N/A          ; |DE1_SoC|loadLevel:load|mazeMemory:mem_unit  ; mazeMemory.v             ;
+; Altera ; altera_pll   ; 17.0    ; N/A          ; N/A          ; |DE1_SoC|video_driver:v1|CLOCK25_PLL:c25_gen ; VGA Buffer/CLOCK25_PLL.v ;
++--------+--------------+---------+--------------+--------------+----------------------------------------------+--------------------------+
 
 
-+-----------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                                  ;
-+------------------------------------------------------------+----------------------------------------+
-; Register name                                              ; Reason for Removal                     ;
-+------------------------------------------------------------+----------------------------------------+
-; loadLevel:comb_38|loadLevel_Control:control_unit|ps[2..31] ; Stuck at GND due to stuck port data_in ;
-; playerControl:player_unit|topBound[0]                      ; Stuck at VCC due to stuck port data_in ;
-; playerControl:player_unit|botBound[0]                      ; Stuck at GND due to stuck port data_in ;
-; playerControl:player_unit|leftBound[0]                     ; Stuck at GND due to stuck port data_in ;
-; playerControl:player_unit|rightBound[0]                    ; Stuck at VCC due to stuck port data_in ;
-; video_driver:v1|rout[1..7]                                 ; Merged with video_driver:v1|rout[0]    ;
-; video_driver:v1|gout[1..7]                                 ; Merged with video_driver:v1|gout[0]    ;
-; video_driver:v1|bout[1..7]                                 ; Merged with video_driver:v1|bout[0]    ;
-; r[1..7]                                                    ; Merged with r[0]                       ;
-; g[1..7]                                                    ; Merged with g[0]                       ;
-; b[1..7]                                                    ; Merged with b[0]                       ;
-; clock_divider:cdiv|divided_clocks[21..31]                  ; Lost fanout                            ;
-; Total Number of Removed Registers = 87                     ;                                        ;
-+------------------------------------------------------------+----------------------------------------+
++------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                     ;
++---------------------------------------------------------+--------------------------------------------------------------+
+; Register name                                           ; Reason for Removal                                           ;
++---------------------------------------------------------+--------------------------------------------------------------+
+; loadLevel:load|loadLevel_Control:control_unit|ps[2..31] ; Stuck at GND due to stuck port data_in                       ;
+; playerControl:player_unit|topBound[0]                   ; Stuck at VCC due to stuck port data_in                       ;
+; playerControl:player_unit|botBound[0]                   ; Stuck at GND due to stuck port data_in                       ;
+; playerControl:player_unit|leftBound[0]                  ; Stuck at GND due to stuck port data_in                       ;
+; playerControl:player_unit|rightBound[0]                 ; Stuck at VCC due to stuck port data_in                       ;
+; video_driver:v1|rout[1..7]                              ; Merged with video_driver:v1|rout[0]                          ;
+; video_driver:v1|gout[1..7]                              ; Merged with video_driver:v1|gout[0]                          ;
+; video_driver:v1|bout[1..7]                              ; Merged with video_driver:v1|bout[0]                          ;
+; r[1..7]                                                 ; Merged with r[0]                                             ;
+; g[1..7]                                                 ; Merged with g[0]                                             ;
+; b[1..7]                                                 ; Merged with b[0]                                             ;
+; clock_divider:cdiv|divided_clocks[0]                    ; Merged with n8_driver:driver|serial_driver:driver|counter[0] ;
+; clock_divider:cdiv|divided_clocks[21..31]               ; Lost fanout                                                  ;
+; Total Number of Removed Registers = 88                  ;                                                              ;
++---------------------------------------------------------+--------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -312,8 +321,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 4995  ;
-; Number of registers using Synchronous Clear  ; 105   ;
+; Total registers                              ; 5017  ;
+; Number of registers using Synchronous Clear  ; 112   ;
 ; Number of registers using Synchronous Load   ; 167   ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
@@ -327,101 +336,111 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                        ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------------+
-; 3:1                ; 80 bits   ; 160 LEs       ; 0 LEs                ; 160 LEs                ; Yes        ; |DE1_SoC|loadLevel:comb_38|currLevel[30][10]                                      ;
-; 3:1                ; 80 bits   ; 160 LEs       ; 0 LEs                ; 160 LEs                ; Yes        ; |DE1_SoC|loadLevel:comb_38|currLevel[31][0]                                       ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |DE1_SoC|playerControl:player_unit|topBound[2]                                    ;
-; 4:1                ; 14 bits   ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; Yes        ; |DE1_SoC|playerControl:player_unit|botBound[4]                                    ;
-; 4:1                ; 9 bits    ; 18 LEs        ; 0 LEs                ; 18 LEs                 ; Yes        ; |DE1_SoC|playerControl:player_unit|leftBound[4]                                   ;
+; 3:1                ; 80 bits   ; 160 LEs       ; 0 LEs                ; 160 LEs                ; Yes        ; |DE1_SoC|loadLevel:load|currLevel[30][10]                                         ;
+; 3:1                ; 80 bits   ; 160 LEs       ; 0 LEs                ; 160 LEs                ; Yes        ; |DE1_SoC|loadLevel:load|currLevel[31][0]                                          ;
+; 4:1                ; 9 bits    ; 18 LEs        ; 0 LEs                ; 18 LEs                 ; Yes        ; |DE1_SoC|playerControl:player_unit|leftBound[9]                                   ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |DE1_SoC|playerControl:player_unit|topBound[1]                                    ;
+; 4:1                ; 14 bits   ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; Yes        ; |DE1_SoC|playerControl:player_unit|topBound[4]                                    ;
 ; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |DE1_SoC|playerControl:player_unit|rightBound[1]                                  ;
 ; 5:1                ; 7 bits    ; 21 LEs        ; 14 LEs               ; 7 LEs                  ; Yes        ; |DE1_SoC|playerControl:player_unit|rightBound[7]                                  ;
 ; 64:1               ; 2 bits    ; 84 LEs        ; 80 LEs               ; 4 LEs                  ; No         ; |DE1_SoC|playerControl:player_unit|Mux124                                         ;
 ; 64:1               ; 2 bits    ; 84 LEs        ; 80 LEs               ; 4 LEs                  ; No         ; |DE1_SoC|playerControl:player_unit|Mux185                                         ;
 ; 64:1               ; 2 bits    ; 84 LEs        ; 80 LEs               ; 4 LEs                  ; No         ; |DE1_SoC|playerControl:player_unit|Mux123                                         ;
-; 64:1               ; 2 bits    ; 84 LEs        ; 80 LEs               ; 4 LEs                  ; No         ; |DE1_SoC|playerControl:player_unit|Mux0                                           ;
+; 64:1               ; 2 bits    ; 84 LEs        ; 80 LEs               ; 4 LEs                  ; No         ; |DE1_SoC|playerControl:player_unit|Mux1                                           ;
 ; 80:1               ; 60 bits   ; 3180 LEs      ; 3180 LEs             ; 0 LEs                  ; No         ; |DE1_SoC|playerControl:player_unit|Mux2                                           ;
 ; 80:1               ; 60 bits   ; 3180 LEs      ; 3180 LEs             ; 0 LEs                  ; No         ; |DE1_SoC|playerControl:player_unit|Mux63                                          ;
 ; 80:1               ; 60 bits   ; 3180 LEs      ; 3180 LEs             ; 0 LEs                  ; No         ; |DE1_SoC|playerControl:player_unit|Mux125                                         ;
 ; 80:1               ; 60 bits   ; 3180 LEs      ; 3180 LEs             ; 0 LEs                  ; No         ; |DE1_SoC|playerControl:player_unit|Mux187                                         ;
-; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |DE1_SoC|loadLevel:comb_38|loadLevel_Control:control_unit|count[1]                ;
-; 3:1                ; 10 bits   ; 20 LEs        ; 0 LEs                ; 20 LEs                 ; Yes        ; |DE1_SoC|video_driver:v1|altera_up_avalon_video_vga_timing:video|pixel_counter[7] ;
-; 3:1                ; 10 bits   ; 20 LEs        ; 0 LEs                ; 20 LEs                 ; Yes        ; |DE1_SoC|video_driver:v1|xt[9]                                                    ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |DE1_SoC|loadLevel:load|loadLevel_Control:control_unit|count[3]                   ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 0 LEs                ; 20 LEs                 ; Yes        ; |DE1_SoC|video_driver:v1|altera_up_avalon_video_vga_timing:video|pixel_counter[3] ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 0 LEs                ; 20 LEs                 ; Yes        ; |DE1_SoC|video_driver:v1|xt[0]                                                    ;
 ; 4:1                ; 9 bits    ; 18 LEs        ; 9 LEs                ; 9 LEs                  ; Yes        ; |DE1_SoC|video_driver:v1|yt[1]                                                    ;
-; 4:1                ; 10 bits   ; 20 LEs        ; 0 LEs                ; 20 LEs                 ; Yes        ; |DE1_SoC|video_driver:v1|altera_up_avalon_video_vga_timing:video|line_counter[10] ;
-; 5:1                ; 10 bits   ; 30 LEs        ; 0 LEs                ; 30 LEs                 ; Yes        ; |DE1_SoC|video_driver:v1|x[9]                                                     ;
+; 4:1                ; 10 bits   ; 20 LEs        ; 0 LEs                ; 20 LEs                 ; Yes        ; |DE1_SoC|video_driver:v1|altera_up_avalon_video_vga_timing:video|line_counter[8]  ;
+; 5:1                ; 10 bits   ; 30 LEs        ; 0 LEs                ; 30 LEs                 ; Yes        ; |DE1_SoC|video_driver:v1|x[0]                                                     ;
 ; 5:1                ; 10 bits   ; 30 LEs        ; 0 LEs                ; 30 LEs                 ; Yes        ; |DE1_SoC|video_driver:v1|xd[4]                                                    ;
-; 6:1                ; 9 bits    ; 36 LEs        ; 0 LEs                ; 36 LEs                 ; Yes        ; |DE1_SoC|video_driver:v1|y[0]                                                     ;
-; 6:1                ; 9 bits    ; 36 LEs        ; 0 LEs                ; 36 LEs                 ; Yes        ; |DE1_SoC|video_driver:v1|yd[0]                                                    ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |DE1_SoC|video_driver:v1|altera_up_avalon_video_vga_timing:video|vga_green        ;
+; 6:1                ; 9 bits    ; 36 LEs        ; 0 LEs                ; 36 LEs                 ; Yes        ; |DE1_SoC|video_driver:v1|y[8]                                                     ;
+; 6:1                ; 9 bits    ; 36 LEs        ; 0 LEs                ; 36 LEs                 ; Yes        ; |DE1_SoC|video_driver:v1|yd[8]                                                    ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |DE1_SoC|video_driver:v1|altera_up_avalon_video_vga_timing:video|vga_red          ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------+
-; Source assignments for loadLevel:comb_38|mazeMemory:mem_unit|altsyncram:altsyncram_component|altsyncram_nib2:auto_generated ;
-+---------------------------------+--------------------+------+---------------------------------------------------------------+
-; Assignment                      ; Value              ; From ; To                                                            ;
-+---------------------------------+--------------------+------+---------------------------------------------------------------+
-; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                             ;
-+---------------------------------+--------------------+------+---------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for loadLevel:load|mazeMemory:mem_unit|altsyncram:altsyncram_component|altsyncram_nib2:auto_generated ;
++---------------------------------+--------------------+------+------------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                         ;
++---------------------------------+--------------------+------+------------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                          ;
++---------------------------------+--------------------+------+------------------------------------------------------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: loadLevel:comb_38|mazeMemory:mem_unit|altsyncram:altsyncram_component ;
-+------------------------------------+----------------------+--------------------------------------------------------+
-; Parameter Name                     ; Value                ; Type                                                   ;
-+------------------------------------+----------------------+--------------------------------------------------------+
-; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                                                ;
-; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                                             ;
-; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                                           ;
-; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                                           ;
-; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                                         ;
-; WIDTH_BYTEENA                      ; 1                    ; Untyped                                                ;
-; OPERATION_MODE                     ; BIDIR_DUAL_PORT      ; Untyped                                                ;
-; WIDTH_A                            ; 80                   ; Signed Integer                                         ;
-; WIDTHAD_A                          ; 7                    ; Signed Integer                                         ;
-; NUMWORDS_A                         ; 120                  ; Signed Integer                                         ;
-; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped                                                ;
-; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                                                ;
-; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                                                ;
-; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                                                ;
-; INDATA_ACLR_A                      ; NONE                 ; Untyped                                                ;
-; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                                                ;
-; WIDTH_B                            ; 80                   ; Signed Integer                                         ;
-; WIDTHAD_B                          ; 7                    ; Signed Integer                                         ;
-; NUMWORDS_B                         ; 120                  ; Signed Integer                                         ;
-; INDATA_REG_B                       ; CLOCK0               ; Untyped                                                ;
-; WRCONTROL_WRADDRESS_REG_B          ; CLOCK0               ; Untyped                                                ;
-; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                                                ;
-; ADDRESS_REG_B                      ; CLOCK0               ; Untyped                                                ;
-; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                                                ;
-; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                                                ;
-; INDATA_ACLR_B                      ; NONE                 ; Untyped                                                ;
-; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                                                ;
-; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                                                ;
-; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                                                ;
-; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                                                ;
-; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                                                ;
-; WIDTH_BYTEENA_A                    ; 1                    ; Signed Integer                                         ;
-; WIDTH_BYTEENA_B                    ; 1                    ; Signed Integer                                         ;
-; RAM_BLOCK_TYPE                     ; M10K                 ; Untyped                                                ;
-; BYTE_SIZE                          ; 8                    ; Untyped                                                ;
-; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                                                ;
-; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                                                ;
-; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                                                ;
-; INIT_FILE                          ; mazeData.mif         ; Untyped                                                ;
-; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                                                ;
-; MAXIMUM_DEPTH                      ; 0                    ; Untyped                                                ;
-; CLOCK_ENABLE_INPUT_A               ; BYPASS               ; Untyped                                                ;
-; CLOCK_ENABLE_INPUT_B               ; BYPASS               ; Untyped                                                ;
-; CLOCK_ENABLE_OUTPUT_A              ; BYPASS               ; Untyped                                                ;
-; CLOCK_ENABLE_OUTPUT_B              ; BYPASS               ; Untyped                                                ;
-; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                                                ;
-; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                                                ;
-; ENABLE_ECC                         ; FALSE                ; Untyped                                                ;
-; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                                                ;
-; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                                                ;
-; DEVICE_FAMILY                      ; Cyclone V            ; Untyped                                                ;
-; CBXI_PARAMETER                     ; altsyncram_nib2      ; Untyped                                                ;
-+------------------------------------+----------------------+--------------------------------------------------------+
++------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: n8_driver:driver|serial_driver:driver ;
++----------------+-------+-----------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                      ;
++----------------+-------+-----------------------------------------------------------+
+; BITS           ; 8     ; Signed Integer                                            ;
++----------------+-------+-----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: loadLevel:load|mazeMemory:mem_unit|altsyncram:altsyncram_component ;
++------------------------------------+----------------------+-----------------------------------------------------+
+; Parameter Name                     ; Value                ; Type                                                ;
++------------------------------------+----------------------+-----------------------------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                                             ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                                          ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                                        ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                                        ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                                      ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped                                             ;
+; OPERATION_MODE                     ; BIDIR_DUAL_PORT      ; Untyped                                             ;
+; WIDTH_A                            ; 80                   ; Signed Integer                                      ;
+; WIDTHAD_A                          ; 7                    ; Signed Integer                                      ;
+; NUMWORDS_A                         ; 120                  ; Signed Integer                                      ;
+; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped                                             ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                                             ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                                             ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                                             ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped                                             ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                                             ;
+; WIDTH_B                            ; 80                   ; Signed Integer                                      ;
+; WIDTHAD_B                          ; 7                    ; Signed Integer                                      ;
+; NUMWORDS_B                         ; 120                  ; Signed Integer                                      ;
+; INDATA_REG_B                       ; CLOCK0               ; Untyped                                             ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK0               ; Untyped                                             ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                                             ;
+; ADDRESS_REG_B                      ; CLOCK0               ; Untyped                                             ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                                             ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                                             ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped                                             ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                                             ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                                             ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                                             ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                                             ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                                             ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Signed Integer                                      ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Signed Integer                                      ;
+; RAM_BLOCK_TYPE                     ; M10K                 ; Untyped                                             ;
+; BYTE_SIZE                          ; 8                    ; Untyped                                             ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                                             ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                                             ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                                             ;
+; INIT_FILE                          ; mazeData.mif         ; Untyped                                             ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                                             ;
+; MAXIMUM_DEPTH                      ; 0                    ; Untyped                                             ;
+; CLOCK_ENABLE_INPUT_A               ; BYPASS               ; Untyped                                             ;
+; CLOCK_ENABLE_INPUT_B               ; BYPASS               ; Untyped                                             ;
+; CLOCK_ENABLE_OUTPUT_A              ; BYPASS               ; Untyped                                             ;
+; CLOCK_ENABLE_OUTPUT_B              ; BYPASS               ; Untyped                                             ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                                             ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                                             ;
+; ENABLE_ECC                         ; FALSE                ; Untyped                                             ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                                             ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                                             ;
+; DEVICE_FAMILY                      ; Cyclone V            ; Untyped                                             ;
+; CBXI_PARAMETER                     ; altsyncram_nib2      ; Untyped                                             ;
++------------------------------------+----------------------+-----------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -707,24 +726,24 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+-------------------------------------------------------------------------------------------------------------------+
-; altsyncram Parameter Settings by Entity Instance                                                                  ;
-+-------------------------------------------+-----------------------------------------------------------------------+
-; Name                                      ; Value                                                                 ;
-+-------------------------------------------+-----------------------------------------------------------------------+
-; Number of entity instances                ; 1                                                                     ;
-; Entity Instance                           ; loadLevel:comb_38|mazeMemory:mem_unit|altsyncram:altsyncram_component ;
-;     -- OPERATION_MODE                     ; BIDIR_DUAL_PORT                                                       ;
-;     -- WIDTH_A                            ; 80                                                                    ;
-;     -- NUMWORDS_A                         ; 120                                                                   ;
-;     -- OUTDATA_REG_A                      ; UNREGISTERED                                                          ;
-;     -- WIDTH_B                            ; 80                                                                    ;
-;     -- NUMWORDS_B                         ; 120                                                                   ;
-;     -- ADDRESS_REG_B                      ; CLOCK0                                                                ;
-;     -- OUTDATA_REG_B                      ; UNREGISTERED                                                          ;
-;     -- RAM_BLOCK_TYPE                     ; M10K                                                                  ;
-;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                                             ;
-+-------------------------------------------+-----------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------+
+; altsyncram Parameter Settings by Entity Instance                                                               ;
++-------------------------------------------+--------------------------------------------------------------------+
+; Name                                      ; Value                                                              ;
++-------------------------------------------+--------------------------------------------------------------------+
+; Number of entity instances                ; 1                                                                  ;
+; Entity Instance                           ; loadLevel:load|mazeMemory:mem_unit|altsyncram:altsyncram_component ;
+;     -- OPERATION_MODE                     ; BIDIR_DUAL_PORT                                                    ;
+;     -- WIDTH_A                            ; 80                                                                 ;
+;     -- NUMWORDS_A                         ; 120                                                                ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                                                       ;
+;     -- WIDTH_B                            ; 80                                                                 ;
+;     -- NUMWORDS_B                         ; 120                                                                ;
+;     -- ADDRESS_REG_B                      ; CLOCK0                                                             ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                                       ;
+;     -- RAM_BLOCK_TYPE                     ; M10K                                                               ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                                          ;
++-------------------------------------------+--------------------------------------------------------------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------------------+
@@ -756,13 +775,25 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +-----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "loadLevel:comb_38"                                                                   ;
+; Port Connectivity Checks: "loadLevel:load"                                                                      ;
 +-------+--------+----------+-------------------------------------------------------------------------------------+
 ; Port  ; Type   ; Severity ; Details                                                                             ;
 +-------+--------+----------+-------------------------------------------------------------------------------------+
 ; ready ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
 ; done  ; Output ; Info     ; Explicitly unconnected                                                              ;
 +-------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Port Connectivity Checks: "n8_driver:driver"        ;
++--------+--------+----------+------------------------+
+; Port   ; Type   ; Severity ; Details                ;
++--------+--------+----------+------------------------+
+; select ; Output ; Info     ; Explicitly unconnected ;
+; start  ; Output ; Info     ; Explicitly unconnected ;
+; a      ; Output ; Info     ; Explicitly unconnected ;
+; b      ; Output ; Info     ; Explicitly unconnected ;
++--------+--------+----------+------------------------+
 
 
 +----------------------------------------------------------------------------------------------------------------------------------+
@@ -780,33 +811,34 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 4995                        ;
+; arriav_ff             ; 5017                        ;
 ;     ENA               ; 4653                        ;
 ;     ENA SCLR          ; 70                          ;
 ;     ENA SLD           ; 164                         ;
-;     SCLR              ; 35                          ;
+;     SCLR              ; 42                          ;
 ;     SLD               ; 3                           ;
-;     plain             ; 70                          ;
-; arriav_lcell_comb     ; 8621                        ;
-;     arith             ; 162                         ;
-;         1 data inputs ; 129                         ;
-;         2 data inputs ; 33                          ;
+;     plain             ; 85                          ;
+; arriav_io_obuf        ; 3                           ;
+; arriav_lcell_comb     ; 8645                        ;
+;     arith             ; 185                         ;
+;         1 data inputs ; 151                         ;
+;         2 data inputs ; 34                          ;
 ;     extend            ; 977                         ;
 ;         7 data inputs ; 977                         ;
-;     normal            ; 7482                        ;
-;         0 data inputs ; 2                           ;
-;         1 data inputs ; 7                           ;
-;         2 data inputs ; 45                          ;
-;         3 data inputs ; 35                          ;
-;         4 data inputs ; 581                         ;
-;         5 data inputs ; 102                         ;
-;         6 data inputs ; 6710                        ;
-; boundary_port         ; 96                          ;
+;     normal            ; 7483                        ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 3                           ;
+;         2 data inputs ; 48                          ;
+;         3 data inputs ; 41                          ;
+;         4 data inputs ; 576                         ;
+;         5 data inputs ; 114                         ;
+;         6 data inputs ; 6700                        ;
+; boundary_port         ; 99                          ;
 ; generic_pll           ; 1                           ;
 ; stratixv_ram_block    ; 80                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 12.10                       ;
-; Average LUT depth     ; 9.43                        ;
+; Average LUT depth     ; 9.40                        ;
 +-----------------------+-----------------------------+
 
 
@@ -815,7 +847,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:16     ;
+; Top            ; 00:00:13     ;
 +----------------+--------------+
 
 
@@ -825,55 +857,70 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
-    Info: Processing started: Fri Jun 03 02:30:16 2022
+    Info: Processing started: Sat Jun 04 15:46:16 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Lab6 -c Lab6
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
+Warning (10263): Verilog HDL Event Control warning at serial_driver.sv(64): event expression contains "|" or "||" File: C:/Users/corbd/Documents/GitHub/ECE-371-Lab-6/serial_driver.sv Line: 64
+Info (12021): Found 1 design units, including 1 entities, in source file serial_driver.sv
+    Info (12023): Found entity 1: serial_driver File: C:/Users/corbd/Documents/GitHub/ECE-371-Lab-6/serial_driver.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file n8_driver.sv
+    Info (12023): Found entity 1: n8_driver File: C:/Users/corbd/Documents/GitHub/ECE-371-Lab-6/n8_driver.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file clock_divider.sv
-    Info (12023): Found entity 1: clock_divider File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/clock_divider.sv Line: 6
+    Info (12023): Found entity 1: clock_divider File: C:/Users/corbd/Documents/GitHub/ECE-371-Lab-6/clock_divider.sv Line: 6
 Info (12021): Found 1 design units, including 1 entities, in source file vga buffer/video_driver.sv
-    Info (12023): Found entity 1: video_driver File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/video_driver.sv Line: 1
+    Info (12023): Found entity 1: video_driver File: C:/Users/corbd/Documents/GitHub/ECE-371-Lab-6/VGA Buffer/video_driver.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file vga buffer/de1_soc.sv
-    Info (12023): Found entity 1: DE1_SoC File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 1
+    Info (12023): Found entity 1: DE1_SoC File: C:/Users/corbd/Documents/GitHub/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 22
 Info (12021): Found 1 design units, including 1 entities, in source file vga buffer/clock25_pll.v
-    Info (12023): Found entity 1: CLOCK25_PLL File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/CLOCK25_PLL.v Line: 8
+    Info (12023): Found entity 1: CLOCK25_PLL File: C:/Users/corbd/Documents/GitHub/ECE-371-Lab-6/VGA Buffer/CLOCK25_PLL.v Line: 8
 Info (12021): Found 1 design units, including 1 entities, in source file vga buffer/clock25_pll/clock25_pll_0002.v
-    Info (12023): Found entity 1: CLOCK25_PLL_0002 File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/CLOCK25_PLL/CLOCK25_PLL_0002.v Line: 2
+    Info (12023): Found entity 1: CLOCK25_PLL_0002 File: C:/Users/corbd/Documents/GitHub/ECE-371-Lab-6/VGA Buffer/CLOCK25_PLL/CLOCK25_PLL_0002.v Line: 2
 Info (12021): Found 1 design units, including 1 entities, in source file vga buffer/altera_up_avalon_video_vga_timing.v
-    Info (12023): Found entity 1: altera_up_avalon_video_vga_timing File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/altera_up_avalon_video_vga_timing.v Line: 47
+    Info (12023): Found entity 1: altera_up_avalon_video_vga_timing File: C:/Users/corbd/Documents/GitHub/ECE-371-Lab-6/VGA Buffer/altera_up_avalon_video_vga_timing.v Line: 47
 Info (12021): Found 1 design units, including 1 entities, in source file playercontrol.sv
-    Info (12023): Found entity 1: playerControl File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/playerControl.sv Line: 1
+    Info (12023): Found entity 1: playerControl File: C:/Users/corbd/Documents/GitHub/ECE-371-Lab-6/playerControl.sv Line: 17
 Info (12021): Found 1 design units, including 1 entities, in source file mazememory.v
-    Info (12023): Found entity 1: mazeMemory File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/mazeMemory.v Line: 40
+    Info (12023): Found entity 1: mazeMemory File: C:/Users/corbd/Documents/GitHub/ECE-371-Lab-6/mazeMemory.v Line: 40
 Info (12021): Found 2 design units, including 2 entities, in source file loadlevel.sv
-    Info (12023): Found entity 1: loadLevel File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/loadLevel.sv Line: 3
-    Info (12023): Found entity 2: loadLevel_testbench File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/loadLevel.sv Line: 29
+    Info (12023): Found entity 1: loadLevel File: C:/Users/corbd/Documents/GitHub/ECE-371-Lab-6/loadLevel.sv Line: 14
+    Info (12023): Found entity 2: loadLevel_testbench File: C:/Users/corbd/Documents/GitHub/ECE-371-Lab-6/loadLevel.sv Line: 41
 Info (12021): Found 1 design units, including 1 entities, in source file loadlevel_control.sv
-    Info (12023): Found entity 1: loadLevel_Control File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/loadLevel_Control.sv Line: 3
-Critical Warning (10846): Verilog HDL Instantiation warning at DE1_SoC.sv(88): instance has no name File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 88
+    Info (12023): Found entity 1: loadLevel_Control File: C:/Users/corbd/Documents/GitHub/ECE-371-Lab-6/loadLevel_Control.sv Line: 17
 Info (12127): Elaborating entity "DE1_SoC" for the top level hierarchy
-Warning (10034): Output port "LEDR" at DE1_SoC.sv(4) has no driver File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 4
-Info (12128): Elaborating entity "clock_divider" for hierarchy "clock_divider:cdiv" File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 50
-Info (12128): Elaborating entity "playerControl" for hierarchy "playerControl:player_unit" File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 86
-Warning (10036): Verilog HDL or VHDL warning at playerControl.sv(8): object "inputReg" assigned a value but never read File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/playerControl.sv Line: 8
-Warning (10230): Verilog HDL assignment warning at playerControl.sv(22): truncated value with size 32 to match size of target (9) File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/playerControl.sv Line: 22
-Warning (10230): Verilog HDL assignment warning at playerControl.sv(23): truncated value with size 32 to match size of target (9) File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/playerControl.sv Line: 23
-Warning (10230): Verilog HDL assignment warning at playerControl.sv(26): truncated value with size 32 to match size of target (9) File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/playerControl.sv Line: 26
-Warning (10230): Verilog HDL assignment warning at playerControl.sv(27): truncated value with size 32 to match size of target (9) File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/playerControl.sv Line: 27
-Warning (10230): Verilog HDL assignment warning at playerControl.sv(30): truncated value with size 32 to match size of target (10) File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/playerControl.sv Line: 30
-Warning (10230): Verilog HDL assignment warning at playerControl.sv(31): truncated value with size 32 to match size of target (10) File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/playerControl.sv Line: 31
-Warning (10230): Verilog HDL assignment warning at playerControl.sv(34): truncated value with size 32 to match size of target (10) File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/playerControl.sv Line: 34
-Warning (10230): Verilog HDL assignment warning at playerControl.sv(35): truncated value with size 32 to match size of target (10) File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/playerControl.sv Line: 35
-Info (12128): Elaborating entity "loadLevel" for hierarchy "loadLevel:comb_38" File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 88
-Info (12128): Elaborating entity "loadLevel_Control" for hierarchy "loadLevel:comb_38|loadLevel_Control:control_unit" File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/loadLevel.sv Line: 16
-Warning (10230): Verilog HDL assignment warning at loadLevel_Control.sv(33): truncated value with size 32 to match size of target (5) File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/loadLevel_Control.sv Line: 33
-Warning (10230): Verilog HDL assignment warning at loadLevel_Control.sv(39): truncated value with size 32 to match size of target (7) File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/loadLevel_Control.sv Line: 39
-Warning (10230): Verilog HDL assignment warning at loadLevel_Control.sv(40): truncated value with size 32 to match size of target (7) File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/loadLevel_Control.sv Line: 40
-Warning (10230): Verilog HDL assignment warning at loadLevel_Control.sv(42): truncated value with size 32 to match size of target (6) File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/loadLevel_Control.sv Line: 42
-Info (12128): Elaborating entity "mazeMemory" for hierarchy "loadLevel:comb_38|mazeMemory:mem_unit" File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/loadLevel.sv Line: 18
-Info (12128): Elaborating entity "altsyncram" for hierarchy "loadLevel:comb_38|mazeMemory:mem_unit|altsyncram:altsyncram_component" File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/mazeMemory.v Line: 94
-Info (12130): Elaborated megafunction instantiation "loadLevel:comb_38|mazeMemory:mem_unit|altsyncram:altsyncram_component" File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/mazeMemory.v Line: 94
-Info (12133): Instantiated megafunction "loadLevel:comb_38|mazeMemory:mem_unit|altsyncram:altsyncram_component" with the following parameter: File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/mazeMemory.v Line: 94
+Warning (10036): Verilog HDL or VHDL warning at DE1_SoC.sv(61): object "start" assigned a value but never read File: C:/Users/corbd/Documents/GitHub/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 61
+Warning (10034): Output port "HEX0" at DE1_SoC.sv(24) has no driver File: C:/Users/corbd/Documents/GitHub/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 24
+Warning (10034): Output port "HEX1" at DE1_SoC.sv(24) has no driver File: C:/Users/corbd/Documents/GitHub/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 24
+Warning (10034): Output port "HEX2" at DE1_SoC.sv(24) has no driver File: C:/Users/corbd/Documents/GitHub/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 24
+Warning (10034): Output port "HEX3" at DE1_SoC.sv(24) has no driver File: C:/Users/corbd/Documents/GitHub/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 24
+Warning (10034): Output port "HEX4" at DE1_SoC.sv(24) has no driver File: C:/Users/corbd/Documents/GitHub/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 24
+Warning (10034): Output port "HEX5" at DE1_SoC.sv(24) has no driver File: C:/Users/corbd/Documents/GitHub/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 24
+Warning (10034): Output port "LEDR" at DE1_SoC.sv(25) has no driver File: C:/Users/corbd/Documents/GitHub/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 25
+Info (12128): Elaborating entity "clock_divider" for hierarchy "clock_divider:cdiv" File: C:/Users/corbd/Documents/GitHub/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 58
+Info (12128): Elaborating entity "n8_driver" for hierarchy "n8_driver:driver" File: C:/Users/corbd/Documents/GitHub/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 91
+Info (12128): Elaborating entity "serial_driver" for hierarchy "n8_driver:driver|serial_driver:driver" File: C:/Users/corbd/Documents/GitHub/ECE-371-Lab-6/n8_driver.sv Line: 26
+Warning (10230): Verilog HDL assignment warning at serial_driver.sv(77): truncated value with size 32 to match size of target (15) File: C:/Users/corbd/Documents/GitHub/ECE-371-Lab-6/serial_driver.sv Line: 77
+Warning (10230): Verilog HDL assignment warning at serial_driver.sv(84): truncated value with size 32 to match size of target (9) File: C:/Users/corbd/Documents/GitHub/ECE-371-Lab-6/serial_driver.sv Line: 84
+Info (12128): Elaborating entity "playerControl" for hierarchy "playerControl:player_unit" File: C:/Users/corbd/Documents/GitHub/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 94
+Warning (10036): Verilog HDL or VHDL warning at playerControl.sv(24): object "inputReg" assigned a value but never read File: C:/Users/corbd/Documents/GitHub/ECE-371-Lab-6/playerControl.sv Line: 24
+Warning (10230): Verilog HDL assignment warning at playerControl.sv(41): truncated value with size 32 to match size of target (9) File: C:/Users/corbd/Documents/GitHub/ECE-371-Lab-6/playerControl.sv Line: 41
+Warning (10230): Verilog HDL assignment warning at playerControl.sv(42): truncated value with size 32 to match size of target (9) File: C:/Users/corbd/Documents/GitHub/ECE-371-Lab-6/playerControl.sv Line: 42
+Warning (10230): Verilog HDL assignment warning at playerControl.sv(45): truncated value with size 32 to match size of target (9) File: C:/Users/corbd/Documents/GitHub/ECE-371-Lab-6/playerControl.sv Line: 45
+Warning (10230): Verilog HDL assignment warning at playerControl.sv(46): truncated value with size 32 to match size of target (9) File: C:/Users/corbd/Documents/GitHub/ECE-371-Lab-6/playerControl.sv Line: 46
+Warning (10230): Verilog HDL assignment warning at playerControl.sv(49): truncated value with size 32 to match size of target (10) File: C:/Users/corbd/Documents/GitHub/ECE-371-Lab-6/playerControl.sv Line: 49
+Warning (10230): Verilog HDL assignment warning at playerControl.sv(50): truncated value with size 32 to match size of target (10) File: C:/Users/corbd/Documents/GitHub/ECE-371-Lab-6/playerControl.sv Line: 50
+Warning (10230): Verilog HDL assignment warning at playerControl.sv(53): truncated value with size 32 to match size of target (10) File: C:/Users/corbd/Documents/GitHub/ECE-371-Lab-6/playerControl.sv Line: 53
+Warning (10230): Verilog HDL assignment warning at playerControl.sv(54): truncated value with size 32 to match size of target (10) File: C:/Users/corbd/Documents/GitHub/ECE-371-Lab-6/playerControl.sv Line: 54
+Info (12128): Elaborating entity "loadLevel" for hierarchy "loadLevel:load" File: C:/Users/corbd/Documents/GitHub/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 97
+Info (12128): Elaborating entity "loadLevel_Control" for hierarchy "loadLevel:load|loadLevel_Control:control_unit" File: C:/Users/corbd/Documents/GitHub/ECE-371-Lab-6/loadLevel.sv Line: 28
+Warning (10230): Verilog HDL assignment warning at loadLevel_Control.sv(52): truncated value with size 32 to match size of target (5) File: C:/Users/corbd/Documents/GitHub/ECE-371-Lab-6/loadLevel_Control.sv Line: 52
+Warning (10230): Verilog HDL assignment warning at loadLevel_Control.sv(58): truncated value with size 32 to match size of target (7) File: C:/Users/corbd/Documents/GitHub/ECE-371-Lab-6/loadLevel_Control.sv Line: 58
+Warning (10230): Verilog HDL assignment warning at loadLevel_Control.sv(59): truncated value with size 32 to match size of target (7) File: C:/Users/corbd/Documents/GitHub/ECE-371-Lab-6/loadLevel_Control.sv Line: 59
+Warning (10230): Verilog HDL assignment warning at loadLevel_Control.sv(61): truncated value with size 32 to match size of target (6) File: C:/Users/corbd/Documents/GitHub/ECE-371-Lab-6/loadLevel_Control.sv Line: 61
+Info (12128): Elaborating entity "mazeMemory" for hierarchy "loadLevel:load|mazeMemory:mem_unit" File: C:/Users/corbd/Documents/GitHub/ECE-371-Lab-6/loadLevel.sv Line: 30
+Info (12128): Elaborating entity "altsyncram" for hierarchy "loadLevel:load|mazeMemory:mem_unit|altsyncram:altsyncram_component" File: C:/Users/corbd/Documents/GitHub/ECE-371-Lab-6/mazeMemory.v Line: 94
+Info (12130): Elaborated megafunction instantiation "loadLevel:load|mazeMemory:mem_unit|altsyncram:altsyncram_component" File: C:/Users/corbd/Documents/GitHub/ECE-371-Lab-6/mazeMemory.v Line: 94
+Info (12133): Instantiated megafunction "loadLevel:load|mazeMemory:mem_unit|altsyncram:altsyncram_component" with the following parameter: File: C:/Users/corbd/Documents/GitHub/ECE-371-Lab-6/mazeMemory.v Line: 94
     Info (12134): Parameter "address_reg_b" = "CLOCK0"
     Info (12134): Parameter "clock_enable_input_a" = "BYPASS"
     Info (12134): Parameter "clock_enable_input_b" = "BYPASS"
@@ -900,15 +947,15 @@ Info (12133): Instantiated megafunction "loadLevel:comb_38|mazeMemory:mem_unit|a
     Info (12134): Parameter "width_byteena_b" = "1"
     Info (12134): Parameter "wrcontrol_wraddress_reg_b" = "CLOCK0"
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_nib2.tdf
-    Info (12023): Found entity 1: altsyncram_nib2 File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/db/altsyncram_nib2.tdf Line: 28
-Info (12128): Elaborating entity "altsyncram_nib2" for hierarchy "loadLevel:comb_38|mazeMemory:mem_unit|altsyncram:altsyncram_component|altsyncram_nib2:auto_generated" File: c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
-Info (12128): Elaborating entity "video_driver" for hierarchy "video_driver:v1" File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 93
-Info (12128): Elaborating entity "CLOCK25_PLL" for hierarchy "video_driver:v1|CLOCK25_PLL:c25_gen" File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/video_driver.sv Line: 47
-Info (12128): Elaborating entity "CLOCK25_PLL_0002" for hierarchy "video_driver:v1|CLOCK25_PLL:c25_gen|CLOCK25_PLL_0002:clock25_pll_inst" File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/CLOCK25_PLL.v Line: 20
-Info (12128): Elaborating entity "altera_pll" for hierarchy "video_driver:v1|CLOCK25_PLL:c25_gen|CLOCK25_PLL_0002:clock25_pll_inst|altera_pll:altera_pll_i" File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/CLOCK25_PLL/CLOCK25_PLL_0002.v Line: 85
+    Info (12023): Found entity 1: altsyncram_nib2 File: C:/Users/corbd/Documents/GitHub/ECE-371-Lab-6/db/altsyncram_nib2.tdf Line: 28
+Info (12128): Elaborating entity "altsyncram_nib2" for hierarchy "loadLevel:load|mazeMemory:mem_unit|altsyncram:altsyncram_component|altsyncram_nib2:auto_generated" File: c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
+Info (12128): Elaborating entity "video_driver" for hierarchy "video_driver:v1" File: C:/Users/corbd/Documents/GitHub/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 103
+Info (12128): Elaborating entity "CLOCK25_PLL" for hierarchy "video_driver:v1|CLOCK25_PLL:c25_gen" File: C:/Users/corbd/Documents/GitHub/ECE-371-Lab-6/VGA Buffer/video_driver.sv Line: 47
+Info (12128): Elaborating entity "CLOCK25_PLL_0002" for hierarchy "video_driver:v1|CLOCK25_PLL:c25_gen|CLOCK25_PLL_0002:clock25_pll_inst" File: C:/Users/corbd/Documents/GitHub/ECE-371-Lab-6/VGA Buffer/CLOCK25_PLL.v Line: 20
+Info (12128): Elaborating entity "altera_pll" for hierarchy "video_driver:v1|CLOCK25_PLL:c25_gen|CLOCK25_PLL_0002:clock25_pll_inst|altera_pll:altera_pll_i" File: C:/Users/corbd/Documents/GitHub/ECE-371-Lab-6/VGA Buffer/CLOCK25_PLL/CLOCK25_PLL_0002.v Line: 85
 Info (10008): Verilog HDL or VHDL information: EDA Netlist Writer cannot regroup multidimensional array "wire_to_nowhere_64" into its bus
-Info (12130): Elaborated megafunction instantiation "video_driver:v1|CLOCK25_PLL:c25_gen|CLOCK25_PLL_0002:clock25_pll_inst|altera_pll:altera_pll_i" File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/CLOCK25_PLL/CLOCK25_PLL_0002.v Line: 85
-Info (12133): Instantiated megafunction "video_driver:v1|CLOCK25_PLL:c25_gen|CLOCK25_PLL_0002:clock25_pll_inst|altera_pll:altera_pll_i" with the following parameter: File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/CLOCK25_PLL/CLOCK25_PLL_0002.v Line: 85
+Info (12130): Elaborated megafunction instantiation "video_driver:v1|CLOCK25_PLL:c25_gen|CLOCK25_PLL_0002:clock25_pll_inst|altera_pll:altera_pll_i" File: C:/Users/corbd/Documents/GitHub/ECE-371-Lab-6/VGA Buffer/CLOCK25_PLL/CLOCK25_PLL_0002.v Line: 85
+Info (12133): Instantiated megafunction "video_driver:v1|CLOCK25_PLL:c25_gen|CLOCK25_PLL_0002:clock25_pll_inst|altera_pll:altera_pll_i" with the following parameter: File: C:/Users/corbd/Documents/GitHub/ECE-371-Lab-6/VGA Buffer/CLOCK25_PLL/CLOCK25_PLL_0002.v Line: 85
     Info (12134): Parameter "fractional_vco_multiplier" = "false"
     Info (12134): Parameter "reference_clock_frequency" = "50.0 MHz"
     Info (12134): Parameter "operation_mode" = "direct"
@@ -969,83 +1016,96 @@ Info (12133): Instantiated megafunction "video_driver:v1|CLOCK25_PLL:c25_gen|CLO
     Info (12134): Parameter "duty_cycle17" = "50"
     Info (12134): Parameter "pll_type" = "General"
     Info (12134): Parameter "pll_subtype" = "General"
-Info (12128): Elaborating entity "altera_up_avalon_video_vga_timing" for hierarchy "video_driver:v1|altera_up_avalon_video_vga_timing:video" File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/video_driver.sv Line: 147
+Info (12128): Elaborating entity "altera_up_avalon_video_vga_timing" for hierarchy "video_driver:v1|altera_up_avalon_video_vga_timing:video" File: C:/Users/corbd/Documents/GitHub/ECE-371-Lab-6/VGA Buffer/video_driver.sv Line: 147
+Warning (13034): The following nodes have both tri-state and non-tri-state drivers
+    Warning (13035): Inserted always-enabled tri-state buffer between "V_GPIO[26]" and its non-tri-state driver. File: C:/Users/corbd/Documents/GitHub/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 27
+    Warning (13035): Inserted always-enabled tri-state buffer between "V_GPIO[27]" and its non-tri-state driver. File: C:/Users/corbd/Documents/GitHub/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 27
+Warning (13039): The following bidirectional pins have no drivers
+    Warning (13040): bidirectional pin "V_GPIO[28]" has no driver File: C:/Users/corbd/Documents/GitHub/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 27
+Warning (13009): TRI or OPNDRN buffers permanently enabled
+    Warning (13010): Node "V_GPIO[26]~synth" File: C:/Users/corbd/Documents/GitHub/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 27
+    Warning (13010): Node "V_GPIO[27]~synth" File: C:/Users/corbd/Documents/GitHub/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 27
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "HEX0[0]" is stuck at VCC File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 3
-    Warning (13410): Pin "HEX0[1]" is stuck at VCC File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 3
-    Warning (13410): Pin "HEX0[2]" is stuck at VCC File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 3
-    Warning (13410): Pin "HEX0[3]" is stuck at VCC File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 3
-    Warning (13410): Pin "HEX0[4]" is stuck at VCC File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 3
-    Warning (13410): Pin "HEX0[5]" is stuck at VCC File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 3
-    Warning (13410): Pin "HEX0[6]" is stuck at VCC File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 3
-    Warning (13410): Pin "HEX1[0]" is stuck at VCC File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 3
-    Warning (13410): Pin "HEX1[1]" is stuck at VCC File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 3
-    Warning (13410): Pin "HEX1[2]" is stuck at VCC File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 3
-    Warning (13410): Pin "HEX1[3]" is stuck at VCC File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 3
-    Warning (13410): Pin "HEX1[4]" is stuck at VCC File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 3
-    Warning (13410): Pin "HEX1[5]" is stuck at VCC File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 3
-    Warning (13410): Pin "HEX1[6]" is stuck at VCC File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 3
-    Warning (13410): Pin "HEX2[0]" is stuck at VCC File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 3
-    Warning (13410): Pin "HEX2[1]" is stuck at VCC File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 3
-    Warning (13410): Pin "HEX2[2]" is stuck at VCC File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 3
-    Warning (13410): Pin "HEX2[3]" is stuck at VCC File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 3
-    Warning (13410): Pin "HEX2[4]" is stuck at VCC File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 3
-    Warning (13410): Pin "HEX2[5]" is stuck at VCC File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 3
-    Warning (13410): Pin "HEX2[6]" is stuck at VCC File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 3
-    Warning (13410): Pin "HEX3[0]" is stuck at VCC File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 3
-    Warning (13410): Pin "HEX3[1]" is stuck at VCC File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 3
-    Warning (13410): Pin "HEX3[2]" is stuck at VCC File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 3
-    Warning (13410): Pin "HEX3[3]" is stuck at VCC File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 3
-    Warning (13410): Pin "HEX3[4]" is stuck at VCC File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 3
-    Warning (13410): Pin "HEX3[5]" is stuck at VCC File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 3
-    Warning (13410): Pin "HEX3[6]" is stuck at VCC File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 3
-    Warning (13410): Pin "HEX4[0]" is stuck at VCC File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 3
-    Warning (13410): Pin "HEX4[1]" is stuck at VCC File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 3
-    Warning (13410): Pin "HEX4[2]" is stuck at VCC File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 3
-    Warning (13410): Pin "HEX4[3]" is stuck at VCC File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 3
-    Warning (13410): Pin "HEX4[4]" is stuck at VCC File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 3
-    Warning (13410): Pin "HEX4[5]" is stuck at VCC File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 3
-    Warning (13410): Pin "HEX4[6]" is stuck at VCC File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 3
-    Warning (13410): Pin "HEX5[0]" is stuck at VCC File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 3
-    Warning (13410): Pin "HEX5[1]" is stuck at VCC File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 3
-    Warning (13410): Pin "HEX5[2]" is stuck at VCC File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 3
-    Warning (13410): Pin "HEX5[3]" is stuck at VCC File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 3
-    Warning (13410): Pin "HEX5[4]" is stuck at VCC File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 3
-    Warning (13410): Pin "HEX5[5]" is stuck at VCC File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 3
-    Warning (13410): Pin "HEX5[6]" is stuck at VCC File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 3
-    Warning (13410): Pin "LEDR[0]" is stuck at GND File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 4
-    Warning (13410): Pin "LEDR[1]" is stuck at GND File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 4
-    Warning (13410): Pin "LEDR[2]" is stuck at GND File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 4
-    Warning (13410): Pin "LEDR[3]" is stuck at GND File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 4
-    Warning (13410): Pin "LEDR[4]" is stuck at GND File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 4
-    Warning (13410): Pin "LEDR[5]" is stuck at GND File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 4
-    Warning (13410): Pin "LEDR[6]" is stuck at GND File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 4
-    Warning (13410): Pin "LEDR[7]" is stuck at GND File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 4
-    Warning (13410): Pin "LEDR[8]" is stuck at GND File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 4
-    Warning (13410): Pin "LEDR[9]" is stuck at GND File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 4
-    Warning (13410): Pin "VGA_SYNC_N" is stuck at GND File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 15
+    Warning (13410): Pin "HEX0[0]" is stuck at GND File: C:/Users/corbd/Documents/GitHub/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 24
+    Warning (13410): Pin "HEX0[1]" is stuck at GND File: C:/Users/corbd/Documents/GitHub/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 24
+    Warning (13410): Pin "HEX0[2]" is stuck at GND File: C:/Users/corbd/Documents/GitHub/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 24
+    Warning (13410): Pin "HEX0[3]" is stuck at GND File: C:/Users/corbd/Documents/GitHub/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 24
+    Warning (13410): Pin "HEX0[4]" is stuck at GND File: C:/Users/corbd/Documents/GitHub/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 24
+    Warning (13410): Pin "HEX0[5]" is stuck at GND File: C:/Users/corbd/Documents/GitHub/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 24
+    Warning (13410): Pin "HEX0[6]" is stuck at GND File: C:/Users/corbd/Documents/GitHub/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 24
+    Warning (13410): Pin "HEX1[0]" is stuck at GND File: C:/Users/corbd/Documents/GitHub/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 24
+    Warning (13410): Pin "HEX1[1]" is stuck at GND File: C:/Users/corbd/Documents/GitHub/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 24
+    Warning (13410): Pin "HEX1[2]" is stuck at GND File: C:/Users/corbd/Documents/GitHub/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 24
+    Warning (13410): Pin "HEX1[3]" is stuck at GND File: C:/Users/corbd/Documents/GitHub/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 24
+    Warning (13410): Pin "HEX1[4]" is stuck at GND File: C:/Users/corbd/Documents/GitHub/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 24
+    Warning (13410): Pin "HEX1[5]" is stuck at GND File: C:/Users/corbd/Documents/GitHub/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 24
+    Warning (13410): Pin "HEX1[6]" is stuck at GND File: C:/Users/corbd/Documents/GitHub/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 24
+    Warning (13410): Pin "HEX2[0]" is stuck at GND File: C:/Users/corbd/Documents/GitHub/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 24
+    Warning (13410): Pin "HEX2[1]" is stuck at GND File: C:/Users/corbd/Documents/GitHub/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 24
+    Warning (13410): Pin "HEX2[2]" is stuck at GND File: C:/Users/corbd/Documents/GitHub/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 24
+    Warning (13410): Pin "HEX2[3]" is stuck at GND File: C:/Users/corbd/Documents/GitHub/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 24
+    Warning (13410): Pin "HEX2[4]" is stuck at GND File: C:/Users/corbd/Documents/GitHub/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 24
+    Warning (13410): Pin "HEX2[5]" is stuck at GND File: C:/Users/corbd/Documents/GitHub/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 24
+    Warning (13410): Pin "HEX2[6]" is stuck at GND File: C:/Users/corbd/Documents/GitHub/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 24
+    Warning (13410): Pin "HEX3[0]" is stuck at GND File: C:/Users/corbd/Documents/GitHub/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 24
+    Warning (13410): Pin "HEX3[1]" is stuck at GND File: C:/Users/corbd/Documents/GitHub/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 24
+    Warning (13410): Pin "HEX3[2]" is stuck at GND File: C:/Users/corbd/Documents/GitHub/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 24
+    Warning (13410): Pin "HEX3[3]" is stuck at GND File: C:/Users/corbd/Documents/GitHub/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 24
+    Warning (13410): Pin "HEX3[4]" is stuck at GND File: C:/Users/corbd/Documents/GitHub/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 24
+    Warning (13410): Pin "HEX3[5]" is stuck at GND File: C:/Users/corbd/Documents/GitHub/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 24
+    Warning (13410): Pin "HEX3[6]" is stuck at GND File: C:/Users/corbd/Documents/GitHub/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 24
+    Warning (13410): Pin "HEX4[0]" is stuck at GND File: C:/Users/corbd/Documents/GitHub/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 24
+    Warning (13410): Pin "HEX4[1]" is stuck at GND File: C:/Users/corbd/Documents/GitHub/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 24
+    Warning (13410): Pin "HEX4[2]" is stuck at GND File: C:/Users/corbd/Documents/GitHub/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 24
+    Warning (13410): Pin "HEX4[3]" is stuck at GND File: C:/Users/corbd/Documents/GitHub/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 24
+    Warning (13410): Pin "HEX4[4]" is stuck at GND File: C:/Users/corbd/Documents/GitHub/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 24
+    Warning (13410): Pin "HEX4[5]" is stuck at GND File: C:/Users/corbd/Documents/GitHub/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 24
+    Warning (13410): Pin "HEX4[6]" is stuck at GND File: C:/Users/corbd/Documents/GitHub/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 24
+    Warning (13410): Pin "HEX5[0]" is stuck at GND File: C:/Users/corbd/Documents/GitHub/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 24
+    Warning (13410): Pin "HEX5[1]" is stuck at GND File: C:/Users/corbd/Documents/GitHub/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 24
+    Warning (13410): Pin "HEX5[2]" is stuck at GND File: C:/Users/corbd/Documents/GitHub/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 24
+    Warning (13410): Pin "HEX5[3]" is stuck at GND File: C:/Users/corbd/Documents/GitHub/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 24
+    Warning (13410): Pin "HEX5[4]" is stuck at GND File: C:/Users/corbd/Documents/GitHub/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 24
+    Warning (13410): Pin "HEX5[5]" is stuck at GND File: C:/Users/corbd/Documents/GitHub/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 24
+    Warning (13410): Pin "HEX5[6]" is stuck at GND File: C:/Users/corbd/Documents/GitHub/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 24
+    Warning (13410): Pin "LEDR[0]" is stuck at GND File: C:/Users/corbd/Documents/GitHub/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 25
+    Warning (13410): Pin "LEDR[1]" is stuck at GND File: C:/Users/corbd/Documents/GitHub/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 25
+    Warning (13410): Pin "LEDR[2]" is stuck at GND File: C:/Users/corbd/Documents/GitHub/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 25
+    Warning (13410): Pin "LEDR[3]" is stuck at GND File: C:/Users/corbd/Documents/GitHub/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 25
+    Warning (13410): Pin "LEDR[4]" is stuck at GND File: C:/Users/corbd/Documents/GitHub/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 25
+    Warning (13410): Pin "LEDR[5]" is stuck at GND File: C:/Users/corbd/Documents/GitHub/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 25
+    Warning (13410): Pin "LEDR[6]" is stuck at GND File: C:/Users/corbd/Documents/GitHub/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 25
+    Warning (13410): Pin "LEDR[7]" is stuck at GND File: C:/Users/corbd/Documents/GitHub/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 25
+    Warning (13410): Pin "LEDR[8]" is stuck at GND File: C:/Users/corbd/Documents/GitHub/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 25
+    Warning (13410): Pin "LEDR[9]" is stuck at GND File: C:/Users/corbd/Documents/GitHub/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 25
+    Warning (13410): Pin "VGA_SYNC_N" is stuck at GND File: C:/Users/corbd/Documents/GitHub/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 39
 Info (286030): Timing-Driven Synthesis is running
 Info (17049): 11 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 5 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 7 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "SW[2]" File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 6
-    Warning (15610): No output dependent on input pin "SW[3]" File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 6
-    Warning (15610): No output dependent on input pin "SW[4]" File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 6
-    Warning (15610): No output dependent on input pin "SW[5]" File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 6
-    Warning (15610): No output dependent on input pin "SW[6]" File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 6
-    Warning (15610): No output dependent on input pin "SW[7]" File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 6
-    Warning (15610): No output dependent on input pin "SW[8]" File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 6
-Info (21057): Implemented 13632 device resources after synthesis - the final resource count might be different
+Warning (21074): Design contains 11 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "KEY[0]" File: C:/Users/corbd/Documents/GitHub/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 29
+    Warning (15610): No output dependent on input pin "KEY[1]" File: C:/Users/corbd/Documents/GitHub/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 29
+    Warning (15610): No output dependent on input pin "KEY[2]" File: C:/Users/corbd/Documents/GitHub/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 29
+    Warning (15610): No output dependent on input pin "KEY[3]" File: C:/Users/corbd/Documents/GitHub/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 29
+    Warning (15610): No output dependent on input pin "SW[2]" File: C:/Users/corbd/Documents/GitHub/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 30
+    Warning (15610): No output dependent on input pin "SW[3]" File: C:/Users/corbd/Documents/GitHub/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 30
+    Warning (15610): No output dependent on input pin "SW[4]" File: C:/Users/corbd/Documents/GitHub/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 30
+    Warning (15610): No output dependent on input pin "SW[5]" File: C:/Users/corbd/Documents/GitHub/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 30
+    Warning (15610): No output dependent on input pin "SW[6]" File: C:/Users/corbd/Documents/GitHub/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 30
+    Warning (15610): No output dependent on input pin "SW[7]" File: C:/Users/corbd/Documents/GitHub/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 30
+    Warning (15610): No output dependent on input pin "SW[8]" File: C:/Users/corbd/Documents/GitHub/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 30
+Info (21057): Implemented 13663 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 15 input pins
     Info (21059): Implemented 81 output pins
-    Info (21061): Implemented 13455 logic cells
+    Info (21060): Implemented 3 bidirectional pins
+    Info (21061): Implemented 13483 logic cells
     Info (21064): Implemented 80 RAM segments
     Info (21065): Implemented 1 PLLs
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 78 warnings
-    Info: Peak virtual memory: 4922 megabytes
-    Info: Processing ended: Fri Jun 03 02:30:50 2022
-    Info: Elapsed time: 00:00:34
-    Info: Total CPU time (on all processors): 00:00:51
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 99 warnings
+    Info: Peak virtual memory: 4942 megabytes
+    Info: Processing ended: Sat Jun 04 15:46:41 2022
+    Info: Elapsed time: 00:00:25
+    Info: Total CPU time (on all processors): 00:00:53
 
 
