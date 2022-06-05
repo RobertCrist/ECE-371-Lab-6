@@ -9,7 +9,7 @@ root = Tk()
 
 # Set the geometry
 root.geometry("1920x1080")
-root.resizable(False, False)
+root.resizable(True, True)
 
 class pixel:
    
