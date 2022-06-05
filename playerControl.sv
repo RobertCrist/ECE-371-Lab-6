@@ -31,8 +31,8 @@ module playerControl(clk, reset, up, down, left, right, currLevel, topBound, bot
     //hit detection and bounding box instantiation
     always_ff @(posedge clk) begin
         if(reset) begin
-            topBound <= 7;//sets the bounding box defaults
-            botBound <= 0; 
+            topBound <= 15;//sets the bounding box defaults
+            botBound <= 7; 
             leftBound <= 0;
             rightBound <= 7;
         end 
