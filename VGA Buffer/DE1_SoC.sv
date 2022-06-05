@@ -46,32 +46,32 @@
 	
 	logic [31:0] div_clk;
 	
-	logic [79:0]currLevel[59:0];
+	logic [79:0] currLevel[59:0];
 
-	
+	logic [79:0] startScreenRow;
 	//Clock select for divided clock to slow down animations
 	logic clkSelect;
-	assign clkSelect = div_clk[20];
+	assign clkSelect = div_clk[18];
 
 	clock_divider cdiv (.clock(CLOCK_50),
 	.reset(reset_wire),
 	.divided_clocks(div_clk));
 	
 	//Logical Wires for player controls and map loading
-	logic reset_wire, up, down, left, right, start, start_wire, levelSel, levelSel_wire, select;
+	logic reset_wire, up, down, left, right, start, start_wire, select, titleScreen, levelLoaded, win;
+	logic [1:0] levelSel, levelSel_wire;
 	logic [5:0] regLoc0, regLoc1;
 	logic [6:0] memAddr0, memAddr1;
-
+	 
 	always_ff @(posedge CLOCK_50)begin
 		//reset for line drawer
-		reset_wire <= SW[9];
+		reset_wire <= ~KEY[3];
 		reset <= reset_wire;
 
-		start_wire <= SW[0];
-		start <= start_wire;
-
-		levelSel_wire <= SW[1];
-		levelSel <= levelSel_wire;
+		levelSel_wire[0] <= SW[0];
+		levelSel[0] <= levelSel_wire[0];
+		levelSel_wire[1] <= SW[1];
+		levelSel[1] <= levelSel_wire[1];
 	end //always_ff
 	   
 	//Instantiation of N8 Controller Driver
@@ -85,16 +85,20 @@
         .left,
         .right,
         .select(),
-        .start(),
+        .start,
         .a(),
         .b()
     );
    
 	//Player controller instantiation
-	playerControl player_unit (.clk(clkSelect), .reset, .up(down), .down(up), .left, .right, .currLevel(currLevel), .topBound, .botBound, .leftBound, .rightBound);
+	playerControl player_unit (.clk(clkSelect), .reset, .up(down), .down(up), .left, .right, .currLevel(currLevel), .topBound, .botBound, .leftBound, .rightBound, .win);
 	
 	//Level Loading instantiation
-	loadLevel load(.clk(CLOCK_50), .reset(reset_wire), .start(start_wire), .levelSel, .currLevel, .ready, .done());
+	loadLevel load_unit(.clk(CLOCK_50), .reset(reset_wire), .start, .levelSel, .currLevel, .ready, .done(levelLoaded));
+	
+	startScreenMem screenMem_unit(.address(y>>3), .clock(CLOCK_50), .q(startScreenRow));
+	
+	gameManager manager_unit(.clk(CLOCK_50), .reset, .start(levelLoaded), .win, .titleScreen);
 	
 	//VGA Video Driver instantiation
 	video_driver #(.WIDTH(640), .HEIGHT(480))
@@ -102,26 +106,70 @@
 			 .VGA_R, .VGA_G, .VGA_B, .VGA_BLANK_N,
 			 .VGA_CLK, .VGA_HS, .VGA_SYNC_N, .VGA_VS);
 	
+	
 	always_ff @(posedge CLOCK_50) begin
-		if(y == topBound & x == leftBound) begin
-		    r <= 255;
-			b <= 0;
-			g <= 0;
-		end 
-		else if(y <= topBound & y >= botBound & x >= leftBound & x <= rightBound) begin
-			r <= 0;
-			b <= 0;
-			g <= 255;
-		end
-		else if (currLevel[y>>3][x>>3]) begin
-			r <= 0;
-			b <= (255);
-			g <= 0;
+    	if(titleScreen)begin
+    		if(startScreenRow[x>>3]) begin
+    			if(y>>3 < 16) begin
+					if(div_clk[27]) begin
+						r <= 51;
+						g <= 0;
+						b <= 111;
+					end
+					else begin
+						r <= 145;
+						g <= 123;
+						b <= 76;
+					end
+				end
+				else if(y>>3 < 27) begin
+					r <= 0;
+					g <= 255;
+					b <= 0;
+				end
+				else if(y>>3 < 34) begin
+					r <= 255;
+					g <= 255;
+					b <= 0;
+				end
+				else if(y>>3 < 41) begin
+					r <= 255;
+					g <= 165;
+					b <= 0;
+				end
+				else if(y>>3 < 48) begin
+					r <= 255;
+					g <= 0;
+					b <= 0;;
+				end
+			end
+			else begin
+				r <= 0;
+				g <= 0;
+				b <= 0;
+			end
 		end
 		else begin
-		    r <= 0;
-			b <= (0);
-			g <= 0;
+			if(y <= topBound & y >= botBound & x >= leftBound & x <= rightBound) begin
+				r <= 255;
+				g <= 255;
+				b <= 255;
+			end
+			else if (currLevel[y>>3][x>>3]) begin
+				r <= 51;
+				g <= 0;
+				b <= 111;
+			end
+			else if(y >= 220 & y < 268 & x >= 304 & x < 344)begin
+				r <= 145;
+				g <= 123;
+				b <= 76;
+			end
+			else begin
+				r <= 0;
+				g <= 0;
+				b <= 0;
+			end
 		end
 	end //always_ff
 	

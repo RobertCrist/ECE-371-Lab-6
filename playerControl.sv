@@ -14,11 +14,12 @@
 		leftBound:	left bounding box of user outputs (10-bits)
 		rightBound:	Right bounding box of user outputs (10-bits)
 */
-module playerControl(clk, reset, up, down, left, right, currLevel, topBound, botBound, leftBound, rightBound);
+module playerControl(clk, reset, up, down, left, right, currLevel, topBound, botBound, leftBound, rightBound, win);
     input logic clk, reset;
     input logic up, down, left, right;
     input logic [79:0]currLevel[59:0];
-
+	
+	 output logic win;	
     output logic [8:0] topBound, botBound;
     output logic [9:0] leftBound, rightBound;
     logic inputReg;
@@ -30,11 +31,11 @@ module playerControl(clk, reset, up, down, left, right, currLevel, topBound, bot
 
     //hit detection and bounding box instantiation
     always_ff @(posedge clk) begin
-        if(reset) begin
+        if(reset | win) begin
             topBound <= 15;//sets the bounding box defaults
-            botBound <= 7; 
-            leftBound <= 0;
-            rightBound <= 7;
+            botBound <= 8; 
+            leftBound <= 8;
+            rightBound <= 15;
         end 
         //Hit detection 
         else if (up & ((~currLevel[(topBound + 2)>>3][leftBound>>3]) & (~currLevel[(topBound + 2)>>3][rightBound>>3])))  begin
@@ -54,6 +55,7 @@ module playerControl(clk, reset, up, down, left, right, currLevel, topBound, bot
             rightBound <= rightBound + 2; 
         end 
     end//always_ff
-	
+	//y > 220 & y <= 280 & x > 304 & x <= 344
+    assign win = (leftBound < 344 & rightBound > 304 & topBound < 280 & botBound > 220); 
 	//assign collisionSide = (up & topBound) | (down & botBound) | (left & leftBound) | (right & rightBound);
 endmodule //playerControl

@@ -13,14 +13,15 @@
 */
 module loadLevel(clk, reset, start, levelSel, currLevel, ready, done);
 	input logic clk, reset;
-	input logic start, levelSel;
+	input logic start;
+	input logic [1:0] levelSel;
 
 	output logic ready, done;
 	//Array to store loaded level from memory
 	output logic [79:0]currLevel[59:0];
 
 	logic [5:0] regLoc0, regLoc1;
-	logic [6:0] memAddr0, memAddr1;
+	logic [7:0] memAddr0, memAddr1;
 	
 	logic [79:0]  memData0, memData1;
 
@@ -40,7 +41,8 @@ endmodule	 //loadlLevel
 
 module loadLevel_testbench();
 	logic clk, reset;
-	logic start, levelSel;
+	logic start; 
+	logic [1:0] levelSel;
 
 	logic ready, done;
 	logic [79:0]currLevel[59:0];

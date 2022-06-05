@@ -16,11 +16,12 @@
 */
 module loadLevel_Control(clk, reset, start, levelSel, memAddr0, memAddr1, regLoc0, regLoc1, ready, done); 
 	input logic clk, reset;
-	input logic start, levelSel;
+	input logic start;
+	input logic [1:0] levelSel;
 	
 	output logic ready, done;
 	output logic [5:0] regLoc0, regLoc1;
-	output logic [6:0] memAddr0, memAddr1;
+	output logic [7:0] memAddr0, memAddr1;
 	
 	logic init;
 	logic [4:0] count;
@@ -55,8 +56,8 @@ module loadLevel_Control(clk, reset, start, levelSel, memAddr0, memAddr1, regLoc
 	assign done = ps == s_done;
 	assign ready = ps == s_idle;
 	assign init = (ps == s_idle) & start;
-	assign memAddr0 = levelSel ? (count + 60):count;
-	assign memAddr1 = levelSel ? (count + 60 + 30):(count + 30);
+	assign memAddr0 = count + 60*levelSel;
+	assign memAddr1 = (count + 30) + 60*levelSel;
 	assign regLoc0 = count;
 	assign regLoc1 = count + 30;
 

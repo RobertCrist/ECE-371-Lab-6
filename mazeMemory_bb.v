@@ -39,8 +39,8 @@ module mazeMemory (
 	q_a,
 	q_b);
 
-	input	[6:0]  address_a;
-	input	[6:0]  address_b;
+	input	[7:0]  address_a;
+	input	[7:0]  address_b;
 	input	  clock;
 	output	[79:0]  q_a;
 	output	[79:0]  q_b;
@@ -87,7 +87,7 @@ endmodule
 // Retrieval info: PRIVATE: JTAG_ENABLED NUMERIC "0"
 // Retrieval info: PRIVATE: JTAG_ID STRING "NONE"
 // Retrieval info: PRIVATE: MAXIMUM_DEPTH NUMERIC "0"
-// Retrieval info: PRIVATE: MEMSIZE NUMERIC "9600"
+// Retrieval info: PRIVATE: MEMSIZE NUMERIC "19200"
 // Retrieval info: PRIVATE: MEM_IN_BITS NUMERIC "0"
 // Retrieval info: PRIVATE: MIFfilename STRING "mazeData.mif"
 // Retrieval info: PRIVATE: OPERATION_MODE NUMERIC "3"
@@ -124,8 +124,8 @@ endmodule
 // Retrieval info: CONSTANT: INIT_FILE STRING "mazeData.mif"
 // Retrieval info: CONSTANT: INTENDED_DEVICE_FAMILY STRING "Cyclone V"
 // Retrieval info: CONSTANT: LPM_TYPE STRING "altsyncram"
-// Retrieval info: CONSTANT: NUMWORDS_A NUMERIC "120"
-// Retrieval info: CONSTANT: NUMWORDS_B NUMERIC "120"
+// Retrieval info: CONSTANT: NUMWORDS_A NUMERIC "240"
+// Retrieval info: CONSTANT: NUMWORDS_B NUMERIC "240"
 // Retrieval info: CONSTANT: OPERATION_MODE STRING "BIDIR_DUAL_PORT"
 // Retrieval info: CONSTANT: OUTDATA_ACLR_A STRING "NONE"
 // Retrieval info: CONSTANT: OUTDATA_ACLR_B STRING "NONE"
@@ -133,20 +133,20 @@ endmodule
 // Retrieval info: CONSTANT: OUTDATA_REG_B STRING "UNREGISTERED"
 // Retrieval info: CONSTANT: POWER_UP_UNINITIALIZED STRING "FALSE"
 // Retrieval info: CONSTANT: RAM_BLOCK_TYPE STRING "M10K"
-// Retrieval info: CONSTANT: WIDTHAD_A NUMERIC "7"
-// Retrieval info: CONSTANT: WIDTHAD_B NUMERIC "7"
+// Retrieval info: CONSTANT: WIDTHAD_A NUMERIC "8"
+// Retrieval info: CONSTANT: WIDTHAD_B NUMERIC "8"
 // Retrieval info: CONSTANT: WIDTH_A NUMERIC "80"
 // Retrieval info: CONSTANT: WIDTH_B NUMERIC "80"
 // Retrieval info: CONSTANT: WIDTH_BYTEENA_A NUMERIC "1"
 // Retrieval info: CONSTANT: WIDTH_BYTEENA_B NUMERIC "1"
 // Retrieval info: CONSTANT: WRCONTROL_WRADDRESS_REG_B STRING "CLOCK0"
-// Retrieval info: USED_PORT: address_a 0 0 7 0 INPUT NODEFVAL "address_a[6..0]"
-// Retrieval info: USED_PORT: address_b 0 0 7 0 INPUT NODEFVAL "address_b[6..0]"
+// Retrieval info: USED_PORT: address_a 0 0 8 0 INPUT NODEFVAL "address_a[7..0]"
+// Retrieval info: USED_PORT: address_b 0 0 8 0 INPUT NODEFVAL "address_b[7..0]"
 // Retrieval info: USED_PORT: clock 0 0 0 0 INPUT VCC "clock"
 // Retrieval info: USED_PORT: q_a 0 0 80 0 OUTPUT NODEFVAL "q_a[79..0]"
 // Retrieval info: USED_PORT: q_b 0 0 80 0 OUTPUT NODEFVAL "q_b[79..0]"
-// Retrieval info: CONNECT: @address_a 0 0 7 0 address_a 0 0 7 0
-// Retrieval info: CONNECT: @address_b 0 0 7 0 address_b 0 0 7 0
+// Retrieval info: CONNECT: @address_a 0 0 8 0 address_a 0 0 8 0
+// Retrieval info: CONNECT: @address_b 0 0 8 0 address_b 0 0 8 0
 // Retrieval info: CONNECT: @clock0 0 0 0 0 clock 0 0 0 0
 // Retrieval info: CONNECT: @data_a 0 0 80 0 GND 0 0 80 0
 // Retrieval info: CONNECT: @data_b 0 0 80 0 GND 0 0 80 0

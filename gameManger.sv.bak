@@ -1,0 +1,12 @@
+module gameManager(clk, reset, start, win, titleScreen);
+	input logic clk, reset, start, win;
+	
+	output logic titleScreen;
+	
+	enum {s_game, s_title} ps, ns;
+	
+	always_ff @(posedge clk)
+		if(reset)
+			ps <= s_idle;
+		else
+			ps <= ns;
