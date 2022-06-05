@@ -96,8 +96,10 @@
 	//Level Loading instantiation
 	loadLevel load_unit(.clk(CLOCK_50), .reset(reset_wire), .start, .levelSel, .currLevel, .ready, .done(levelLoaded));
 	
+	//Start Screen Loading
 	startScreenMem screenMem_unit(.address(y>>3), .clock(CLOCK_50), .q(startScreenRow));
 	
+	//Switch between game and title screens
 	gameManager manager_unit(.clk(CLOCK_50), .reset, .start(levelLoaded), .win, .titleScreen);
 	
 	//VGA Video Driver instantiation
@@ -107,6 +109,7 @@
 			 .VGA_CLK, .VGA_HS, .VGA_SYNC_N, .VGA_VS);
 	
 	
+	//Color animations for title screen
 	always_ff @(posedge CLOCK_50) begin
     	if(titleScreen)begin
     		if(startScreenRow[x>>3]) begin
@@ -149,6 +152,7 @@
 				b <= 0;
 			end
 		end
+		//Game color choice
 		else begin
 			if(y <= topBound & y >= botBound & x >= leftBound & x <= rightBound) begin
 				r <= 255;
