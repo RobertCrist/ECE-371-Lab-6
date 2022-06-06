@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Lab6
-Sun Jun 05 02:17:13 2022
+Sun Jun 05 18:01:01 2022
 Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 
 
@@ -62,13 +62,13 @@ agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Sun Jun 05 02:17:13 2022       ;
+; Analysis & Synthesis Status     ; Successful - Sun Jun 05 18:01:01 2022       ;
 ; Quartus Prime Version           ; 17.0.0 Build 595 04/25/2017 SJ Lite Edition ;
 ; Revision Name                   ; Lab6                                        ;
 ; Top-level Entity Name           ; DE1_SoC                                     ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 5042                                        ;
+; Total registers                 ; 5050                                        ;
 ; Total pins                      ; 99                                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 24,000                                      ;
@@ -177,14 +177,14 @@ agreement for further details.
 ; Number detected on machine ; 4           ;
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
-; Average used               ; 1.99        ;
+; Average used               ; 2.02        ;
 ; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;  36.8%      ;
-;     Processor 3            ;  36.8%      ;
-;     Processor 4            ;  25.0%      ;
+;     Processor 2            ;  39.4%      ;
+;     Processor 3            ;  31.4%      ;
+;     Processor 4            ;  31.3%      ;
 +----------------------------+-------------+
 
 
@@ -229,16 +229,16 @@ agreement for further details.
 +---------------------------------------------+----------------+
 ; Resource                                    ; Usage          ;
 +---------------------------------------------+----------------+
-; Estimate of Logic utilization (ALMs needed) ; 8865           ;
+; Estimate of Logic utilization (ALMs needed) ; 8969           ;
 ;                                             ;                ;
-; Combinational ALUT usage for logic          ; 8688           ;
-;     -- 7 input functions                    ; 1023           ;
-;     -- 6 input functions                    ; 6727           ;
-;     -- 5 input functions                    ; 112            ;
-;     -- 4 input functions                    ; 523            ;
-;     -- <=3 input functions                  ; 303            ;
+; Combinational ALUT usage for logic          ; 8542           ;
+;     -- 7 input functions                    ; 978            ;
+;     -- 6 input functions                    ; 6839           ;
+;     -- 5 input functions                    ; 324            ;
+;     -- 4 input functions                    ; 44             ;
+;     -- <=3 input functions                  ; 357            ;
 ;                                             ;                ;
-; Dedicated logic registers                   ; 5042           ;
+; Dedicated logic registers                   ; 5050           ;
 ;                                             ;                ;
 ; I/O pins                                    ; 99             ;
 ; Total MLAB memory bits                      ; 0              ;
@@ -250,9 +250,9 @@ agreement for further details.
 ;     -- PLLs                                 ; 1              ;
 ;                                             ;                ;
 ; Maximum fan-out node                        ; CLOCK_50~input ;
-; Maximum fan-out                             ; 5027           ;
-; Total fan-out                               ; 68171          ;
-; Average fan-out                             ; 4.84           ;
+; Maximum fan-out                             ; 5031           ;
+; Total fan-out                               ; 67877          ;
+; Average fan-out                             ; 4.86           ;
 +---------------------------------------------+----------------+
 
 
@@ -261,7 +261,7 @@ agreement for further details.
 +-------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------------------------------------+-----------------------------------+--------------+
 ; Compilation Hierarchy Node                      ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                             ; Entity Name                       ; Library Name ;
 +-------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------------------------------------+-----------------------------------+--------------+
-; |DE1_SoC                                        ; 8688 (1536)         ; 5042 (16)                 ; 24000             ; 0          ; 99   ; 0            ; |DE1_SoC                                                                                                        ; DE1_SoC                           ; work         ;
+; |DE1_SoC                                        ; 8542 (1551)         ; 5050 (20)                 ; 24000             ; 0          ; 99   ; 0            ; |DE1_SoC                                                                                                        ; DE1_SoC                           ; work         ;
 ;    |clock_divider:cdiv|                         ; 27 (27)             ; 27 (27)                   ; 0                 ; 0          ; 0    ; 0            ; |DE1_SoC|clock_divider:cdiv                                                                                     ; clock_divider                     ; work         ;
 ;    |gameManager:manager_unit|                   ; 3 (3)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SoC|gameManager:manager_unit                                                                               ; gameManager                       ; work         ;
 ;    |loadLevel:load_unit|                        ; 69 (44)             ; 4807 (4800)               ; 19200             ; 0          ; 0    ; 0            ; |DE1_SoC|loadLevel:load_unit                                                                                    ; loadLevel                         ; work         ;
@@ -271,15 +271,15 @@ agreement for further details.
 ;             |altsyncram_vib2:auto_generated|    ; 0 (0)               ; 0 (0)                     ; 19200             ; 0          ; 0    ; 0            ; |DE1_SoC|loadLevel:load_unit|mazeMemory:mem_unit|altsyncram:altsyncram_component|altsyncram_vib2:auto_generated ; altsyncram_vib2                   ; work         ;
 ;    |n8_driver:driver|                           ; 31 (0)              ; 34 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |DE1_SoC|n8_driver:driver                                                                                       ; n8_driver                         ; work         ;
 ;       |serial_driver:driver|                    ; 31 (31)             ; 34 (34)                   ; 0                 ; 0          ; 0    ; 0            ; |DE1_SoC|n8_driver:driver|serial_driver:driver                                                                  ; serial_driver                     ; work         ;
-;    |playerControl:player_unit|                  ; 6886 (6886)         ; 34 (34)                   ; 0                 ; 0          ; 0    ; 0            ; |DE1_SoC|playerControl:player_unit                                                                              ; playerControl                     ; work         ;
+;    |playerControl:player_unit|                  ; 6721 (6721)         ; 34 (34)                   ; 0                 ; 0          ; 0    ; 0            ; |DE1_SoC|playerControl:player_unit                                                                              ; playerControl                     ; work         ;
 ;    |startScreenMem:screenMem_unit|              ; 0 (0)               ; 0 (0)                     ; 4800              ; 0          ; 0    ; 0            ; |DE1_SoC|startScreenMem:screenMem_unit                                                                          ; startScreenMem                    ; work         ;
 ;       |altsyncram:altsyncram_component|         ; 0 (0)               ; 0 (0)                     ; 4800              ; 0          ; 0    ; 0            ; |DE1_SoC|startScreenMem:screenMem_unit|altsyncram:altsyncram_component                                          ; altsyncram                        ; work         ;
 ;          |altsyncram_90j1:auto_generated|       ; 0 (0)               ; 0 (0)                     ; 4800              ; 0          ; 0    ; 0            ; |DE1_SoC|startScreenMem:screenMem_unit|altsyncram:altsyncram_component|altsyncram_90j1:auto_generated           ; altsyncram_90j1                   ; work         ;
-;    |video_driver:v1|                            ; 136 (81)            ; 123 (68)                  ; 0                 ; 0          ; 0    ; 0            ; |DE1_SoC|video_driver:v1                                                                                        ; video_driver                      ; work         ;
+;    |video_driver:v1|                            ; 140 (81)            ; 127 (72)                  ; 0                 ; 0          ; 0    ; 0            ; |DE1_SoC|video_driver:v1                                                                                        ; video_driver                      ; work         ;
 ;       |CLOCK25_PLL:c25_gen|                     ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SoC|video_driver:v1|CLOCK25_PLL:c25_gen                                                                    ; CLOCK25_PLL                       ; CLOCK25_PLL  ;
 ;          |CLOCK25_PLL_0002:clock25_pll_inst|    ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SoC|video_driver:v1|CLOCK25_PLL:c25_gen|CLOCK25_PLL_0002:clock25_pll_inst                                  ; CLOCK25_PLL_0002                  ; CLOCK25_PLL  ;
 ;             |altera_pll:altera_pll_i|           ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SoC|video_driver:v1|CLOCK25_PLL:c25_gen|CLOCK25_PLL_0002:clock25_pll_inst|altera_pll:altera_pll_i          ; altera_pll                        ; work         ;
-;       |altera_up_avalon_video_vga_timing:video| ; 55 (55)             ; 55 (55)                   ; 0                 ; 0          ; 0    ; 0            ; |DE1_SoC|video_driver:v1|altera_up_avalon_video_vga_timing:video                                                ; altera_up_avalon_video_vga_timing ; work         ;
+;       |altera_up_avalon_video_vga_timing:video| ; 59 (59)             ; 55 (55)                   ; 0                 ; 0          ; 0    ; 0            ; |DE1_SoC|video_driver:v1|altera_up_avalon_video_vga_timing:video                                                ; altera_up_avalon_video_vga_timing ; work         ;
 +-------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------------------------------------+-----------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -316,27 +316,25 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; playerControl:player_unit|botBound[0]                        ; Stuck at GND due to stuck port data_in                       ;
 ; playerControl:player_unit|leftBound[0]                       ; Stuck at GND due to stuck port data_in                       ;
 ; playerControl:player_unit|rightBound[0]                      ; Stuck at VCC due to stuck port data_in                       ;
+; b[3,6]                                                       ; Merged with b[2]                                             ;
+; r[4]                                                         ; Merged with r[0]                                             ;
 ; video_driver:v1|rout[4]                                      ; Merged with video_driver:v1|rout[0]                          ;
 ; video_driver:v1|rout[5]                                      ; Merged with video_driver:v1|rout[1]                          ;
-; video_driver:v1|rout[3,6]                                    ; Merged with video_driver:v1|rout[2]                          ;
+; video_driver:v1|rout[3]                                      ; Merged with video_driver:v1|rout[2]                          ;
 ; video_driver:v1|gout[5]                                      ; Merged with video_driver:v1|gout[0]                          ;
-; video_driver:v1|gout[3,4,6]                                  ; Merged with video_driver:v1|gout[1]                          ;
-; video_driver:v1|gout[7]                                      ; Merged with video_driver:v1|gout[2]                          ;
-; video_driver:v1|bout[1,5]                                    ; Merged with video_driver:v1|bout[0]                          ;
+; video_driver:v1|gout[4,6]                                    ; Merged with video_driver:v1|gout[3]                          ;
+; video_driver:v1|bout[5]                                      ; Merged with video_driver:v1|bout[0]                          ;
 ; video_driver:v1|bout[3,6]                                    ; Merged with video_driver:v1|bout[2]                          ;
 ; video_driver:v1|bout[7]                                      ; Merged with video_driver:v1|bout[4]                          ;
-; r[4]                                                         ; Merged with r[0]                                             ;
 ; r[5]                                                         ; Merged with r[1]                                             ;
-; r[3,6]                                                       ; Merged with r[2]                                             ;
+; r[3]                                                         ; Merged with r[2]                                             ;
 ; g[5]                                                         ; Merged with g[0]                                             ;
-; g[3,4,6]                                                     ; Merged with g[1]                                             ;
-; g[7]                                                         ; Merged with g[2]                                             ;
-; b[1,5]                                                       ; Merged with b[0]                                             ;
-; b[3,6]                                                       ; Merged with b[2]                                             ;
+; g[4,6]                                                       ; Merged with g[3]                                             ;
+; b[5]                                                         ; Merged with b[0]                                             ;
 ; b[7]                                                         ; Merged with b[4]                                             ;
 ; clock_divider:cdiv|divided_clocks[0]                         ; Merged with n8_driver:driver|serial_driver:driver|counter[0] ;
 ; clock_divider:cdiv|divided_clocks[28..31]                    ; Lost fanout                                                  ;
-; Total Number of Removed Registers = 98                       ;                                                              ;
+; Total Number of Removed Registers = 90                       ;                                                              ;
 +--------------------------------------------------------------+--------------------------------------------------------------+
 
 
@@ -345,12 +343,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 5042  ;
-; Number of registers using Synchronous Clear  ; 120   ;
-; Number of registers using Synchronous Load   ; 172   ;
+; Total registers                              ; 5050  ;
+; Number of registers using Synchronous Clear  ; 123   ;
+; Number of registers using Synchronous Load   ; 178   ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 4896  ;
+; Number of registers using Clock Enable       ; 4899  ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -360,34 +358,36 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                        ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------------+
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DE1_SoC|playerControl:player_unit|leftBound[2]                                   ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; Yes        ; |DE1_SoC|playerControl:player_unit|rightBound[2]                                  ;
+; 5:1                ; 6 bits    ; 18 LEs        ; 12 LEs               ; 6 LEs                  ; Yes        ; |DE1_SoC|playerControl:player_unit|rightBound[8]                                  ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; Yes        ; |DE1_SoC|playerControl:player_unit|topBound[2]                                    ;
+; 5:1                ; 12 bits   ; 36 LEs        ; 12 LEs               ; 24 LEs                 ; Yes        ; |DE1_SoC|playerControl:player_unit|botBound[2]                                    ;
+; 8:1                ; 2 bits    ; 10 LEs        ; 8 LEs                ; 2 LEs                  ; Yes        ; |DE1_SoC|b[2]                                                                     ;
+; 8:1                ; 5 bits    ; 25 LEs        ; 20 LEs               ; 5 LEs                  ; Yes        ; |DE1_SoC|b[4]                                                                     ;
+; 8:1                ; 5 bits    ; 25 LEs        ; 20 LEs               ; 5 LEs                  ; Yes        ; |DE1_SoC|r[7]                                                                     ;
+; 9:1                ; 2 bits    ; 12 LEs        ; 10 LEs               ; 2 LEs                  ; Yes        ; |DE1_SoC|g[1]                                                                     ;
+; 64:1               ; 2 bits    ; 84 LEs        ; 80 LEs               ; 4 LEs                  ; No         ; |DE1_SoC|playerControl:player_unit|Mux186                                         ;
+; 64:1               ; 2 bits    ; 84 LEs        ; 80 LEs               ; 4 LEs                  ; No         ; |DE1_SoC|playerControl:player_unit|Mux247                                         ;
+; 64:1               ; 2 bits    ; 84 LEs        ; 80 LEs               ; 4 LEs                  ; No         ; |DE1_SoC|playerControl:player_unit|Mux121                                         ;
+; 64:1               ; 2 bits    ; 84 LEs        ; 80 LEs               ; 4 LEs                  ; No         ; |DE1_SoC|playerControl:player_unit|Mux123                                         ;
+; 80:1               ; 60 bits   ; 3180 LEs      ; 3180 LEs             ; 0 LEs                  ; No         ; |DE1_SoC|playerControl:player_unit|Mux27                                          ;
+; 80:1               ; 60 bits   ; 3180 LEs      ; 3180 LEs             ; 0 LEs                  ; No         ; |DE1_SoC|playerControl:player_unit|Mux92                                          ;
+; 80:1               ; 60 bits   ; 3180 LEs      ; 3180 LEs             ; 0 LEs                  ; No         ; |DE1_SoC|playerControl:player_unit|Mux187                                         ;
+; 80:1               ; 60 bits   ; 3180 LEs      ; 3180 LEs             ; 0 LEs                  ; No         ; |DE1_SoC|playerControl:player_unit|Mux159                                         ;
 ; 3:1                ; 80 bits   ; 160 LEs       ; 0 LEs                ; 160 LEs                ; Yes        ; |DE1_SoC|loadLevel:load_unit|currLevel[30][0]                                     ;
 ; 3:1                ; 80 bits   ; 160 LEs       ; 0 LEs                ; 160 LEs                ; Yes        ; |DE1_SoC|loadLevel:load_unit|currLevel[31][0]                                     ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DE1_SoC|playerControl:player_unit|leftBound[9]                                   ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |DE1_SoC|playerControl:player_unit|botBound[3]                                    ;
-; 4:1                ; 12 bits   ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |DE1_SoC|playerControl:player_unit|topBound[4]                                    ;
-; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; Yes        ; |DE1_SoC|playerControl:player_unit|rightBound[1]                                  ;
-; 5:1                ; 6 bits    ; 18 LEs        ; 12 LEs               ; 6 LEs                  ; Yes        ; |DE1_SoC|playerControl:player_unit|rightBound[7]                                  ;
-; 64:1               ; 2 bits    ; 84 LEs        ; 80 LEs               ; 4 LEs                  ; No         ; |DE1_SoC|playerControl:player_unit|Mux124                                         ;
-; 64:1               ; 2 bits    ; 84 LEs        ; 80 LEs               ; 4 LEs                  ; No         ; |DE1_SoC|playerControl:player_unit|Mux185                                         ;
-; 64:1               ; 2 bits    ; 84 LEs        ; 80 LEs               ; 4 LEs                  ; No         ; |DE1_SoC|playerControl:player_unit|Mux123                                         ;
-; 64:1               ; 2 bits    ; 84 LEs        ; 80 LEs               ; 4 LEs                  ; No         ; |DE1_SoC|playerControl:player_unit|Mux1                                           ;
-; 80:1               ; 60 bits   ; 3180 LEs      ; 3180 LEs             ; 0 LEs                  ; No         ; |DE1_SoC|playerControl:player_unit|Mux2                                           ;
-; 80:1               ; 60 bits   ; 3180 LEs      ; 3180 LEs             ; 0 LEs                  ; No         ; |DE1_SoC|playerControl:player_unit|Mux63                                          ;
-; 80:1               ; 60 bits   ; 3180 LEs      ; 3180 LEs             ; 0 LEs                  ; No         ; |DE1_SoC|playerControl:player_unit|Mux125                                         ;
-; 80:1               ; 60 bits   ; 3180 LEs      ; 3180 LEs             ; 0 LEs                  ; No         ; |DE1_SoC|playerControl:player_unit|Mux187                                         ;
-; 8:1                ; 5 bits    ; 25 LEs        ; 20 LEs               ; 5 LEs                  ; Yes        ; |DE1_SoC|b[2]                                                                     ;
-; 8:1                ; 5 bits    ; 25 LEs        ; 20 LEs               ; 5 LEs                  ; Yes        ; |DE1_SoC|b[0]                                                                     ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |DE1_SoC|b                                                                        ;
+; 3:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; Yes        ; |DE1_SoC|video_driver:v1|altera_up_avalon_video_vga_timing:video|vga_red[6]       ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |DE1_SoC|loadLevel:load_unit|loadLevel_Control:control_unit|count[4]              ;
 ; 3:1                ; 10 bits   ; 20 LEs        ; 0 LEs                ; 20 LEs                 ; Yes        ; |DE1_SoC|video_driver:v1|altera_up_avalon_video_vga_timing:video|pixel_counter[9] ;
-; 3:1                ; 10 bits   ; 20 LEs        ; 0 LEs                ; 20 LEs                 ; Yes        ; |DE1_SoC|video_driver:v1|xt[8]                                                    ;
-; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |DE1_SoC|loadLevel:load_unit|loadLevel_Control:control_unit|count[3]              ;
-; 4:1                ; 9 bits    ; 18 LEs        ; 9 LEs                ; 9 LEs                  ; Yes        ; |DE1_SoC|video_driver:v1|yt[2]                                                    ;
-; 4:1                ; 10 bits   ; 20 LEs        ; 0 LEs                ; 20 LEs                 ; Yes        ; |DE1_SoC|video_driver:v1|altera_up_avalon_video_vga_timing:video|line_counter[5]  ;
-; 5:1                ; 10 bits   ; 30 LEs        ; 0 LEs                ; 30 LEs                 ; Yes        ; |DE1_SoC|video_driver:v1|x[9]                                                     ;
-; 5:1                ; 10 bits   ; 30 LEs        ; 0 LEs                ; 30 LEs                 ; Yes        ; |DE1_SoC|video_driver:v1|xd[4]                                                    ;
-; 6:1                ; 9 bits    ; 36 LEs        ; 0 LEs                ; 36 LEs                 ; Yes        ; |DE1_SoC|video_driver:v1|y[0]                                                     ;
-; 6:1                ; 9 bits    ; 36 LEs        ; 0 LEs                ; 36 LEs                 ; Yes        ; |DE1_SoC|video_driver:v1|yd[5]                                                    ;
-; 3:1                ; 9 bits    ; 18 LEs        ; 18 LEs               ; 0 LEs                  ; No         ; |DE1_SoC|video_driver:v1|altera_up_avalon_video_vga_timing:video|vga_blue         ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 0 LEs                ; 20 LEs                 ; Yes        ; |DE1_SoC|video_driver:v1|xt[9]                                                    ;
+; 4:1                ; 9 bits    ; 18 LEs        ; 9 LEs                ; 9 LEs                  ; Yes        ; |DE1_SoC|video_driver:v1|yt[3]                                                    ;
+; 4:1                ; 10 bits   ; 20 LEs        ; 0 LEs                ; 20 LEs                 ; Yes        ; |DE1_SoC|video_driver:v1|altera_up_avalon_video_vga_timing:video|line_counter[10] ;
+; 5:1                ; 10 bits   ; 30 LEs        ; 0 LEs                ; 30 LEs                 ; Yes        ; |DE1_SoC|video_driver:v1|x[4]                                                     ;
+; 5:1                ; 10 bits   ; 30 LEs        ; 0 LEs                ; 30 LEs                 ; Yes        ; |DE1_SoC|video_driver:v1|xd[8]                                                    ;
+; 6:1                ; 9 bits    ; 36 LEs        ; 0 LEs                ; 36 LEs                 ; Yes        ; |DE1_SoC|video_driver:v1|y[5]                                                     ;
+; 6:1                ; 9 bits    ; 36 LEs        ; 0 LEs                ; 36 LEs                 ; Yes        ; |DE1_SoC|video_driver:v1|yd[6]                                                    ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |DE1_SoC|video_driver:v1|altera_up_avalon_video_vga_timing:video|vga_blue         ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------------+
 
 
@@ -917,8 +917,8 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Port                   ; Type   ; Severity ; Details                                                                             ;
 +------------------------+--------+----------+-------------------------------------------------------------------------------------+
 ; divided_clocks[31..28] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; divided_clocks[26..19] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; divided_clocks[17..0]  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; divided_clocks[26..20] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; divided_clocks[18..0]  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
 +------------------------+--------+----------+-------------------------------------------------------------------------------------+
 
 
@@ -927,36 +927,36 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 5042                        ;
-;     ENA               ; 4662                        ;
+; arriav_ff             ; 5050                        ;
+;     ENA               ; 4658                        ;
 ;     ENA SCLR          ; 67                          ;
-;     ENA SLD           ; 167                         ;
-;     SCLR              ; 53                          ;
-;     SLD               ; 5                           ;
-;     plain             ; 88                          ;
+;     ENA SLD           ; 174                         ;
+;     SCLR              ; 56                          ;
+;     SLD               ; 4                           ;
+;     plain             ; 91                          ;
 ; arriav_io_obuf        ; 3                           ;
-; arriav_lcell_comb     ; 8688                        ;
+; arriav_lcell_comb     ; 8542                        ;
 ;     arith             ; 204                         ;
 ;         1 data inputs ; 160                         ;
 ;         2 data inputs ; 38                          ;
 ;         3 data inputs ; 4                           ;
 ;         4 data inputs ; 2                           ;
-;     extend            ; 1023                        ;
-;         7 data inputs ; 1023                        ;
-;     normal            ; 7461                        ;
+;     extend            ; 978                         ;
+;         7 data inputs ; 978                         ;
+;     normal            ; 7360                        ;
 ;         0 data inputs ; 1                           ;
-;         1 data inputs ; 4                           ;
-;         2 data inputs ; 54                          ;
-;         3 data inputs ; 42                          ;
-;         4 data inputs ; 521                         ;
-;         5 data inputs ; 112                         ;
-;         6 data inputs ; 6727                        ;
+;         1 data inputs ; 5                           ;
+;         2 data inputs ; 42                          ;
+;         3 data inputs ; 107                         ;
+;         4 data inputs ; 42                          ;
+;         5 data inputs ; 324                         ;
+;         6 data inputs ; 6839                        ;
 ; boundary_port         ; 99                          ;
 ; generic_pll           ; 1                           ;
 ; stratixv_ram_block    ; 160                         ;
 ;                       ;                             ;
 ; Max LUT depth         ; 12.10                       ;
-; Average LUT depth     ; 9.43                        ;
+; Average LUT depth     ; 9.50                        ;
 +-----------------------+-----------------------------+
 
 
@@ -965,7 +965,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:17     ;
+; Top            ; 00:00:19     ;
 +----------------+--------------+
 
 
@@ -975,7 +975,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
-    Info: Processing started: Sun Jun 05 02:16:40 2022
+    Info: Processing started: Sun Jun 05 18:00:26 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Lab6 -c Lab6
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -1004,7 +1004,7 @@ Info (12021): Found 2 design units, including 2 entities, in source file loadlev
 Info (12021): Found 1 design units, including 1 entities, in source file loadlevel_control.sv
     Info (12023): Found entity 1: loadLevel_Control File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/loadLevel_Control.sv Line: 17
 Info (12021): Found 1 design units, including 1 entities, in source file gamemanger.sv
-    Info (12023): Found entity 1: gameManager File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/gameManger.sv Line: 1
+    Info (12023): Found entity 1: gameManager File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/gameManger.sv Line: 11
 Info (12021): Found 1 design units, including 1 entities, in source file mazememory.v
     Info (12023): Found entity 1: mazeMemory File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/mazeMemory.v Line: 40
 Info (12021): Found 1 design units, including 1 entities, in source file startscreenmem.v
@@ -1024,14 +1024,14 @@ Warning (10230): Verilog HDL assignment warning at serial_driver.sv(77): truncat
 Warning (10230): Verilog HDL assignment warning at serial_driver.sv(84): truncated value with size 32 to match size of target (9) File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/serial_driver.sv Line: 84
 Info (12128): Elaborating entity "playerControl" for hierarchy "playerControl:player_unit" File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 94
 Warning (10036): Verilog HDL or VHDL warning at playerControl.sv(25): object "inputReg" assigned a value but never read File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/playerControl.sv Line: 25
-Warning (10230): Verilog HDL assignment warning at playerControl.sv(42): truncated value with size 32 to match size of target (9) File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/playerControl.sv Line: 42
-Warning (10230): Verilog HDL assignment warning at playerControl.sv(43): truncated value with size 32 to match size of target (9) File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/playerControl.sv Line: 43
-Warning (10230): Verilog HDL assignment warning at playerControl.sv(46): truncated value with size 32 to match size of target (9) File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/playerControl.sv Line: 46
-Warning (10230): Verilog HDL assignment warning at playerControl.sv(47): truncated value with size 32 to match size of target (9) File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/playerControl.sv Line: 47
-Warning (10230): Verilog HDL assignment warning at playerControl.sv(50): truncated value with size 32 to match size of target (10) File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/playerControl.sv Line: 50
-Warning (10230): Verilog HDL assignment warning at playerControl.sv(51): truncated value with size 32 to match size of target (10) File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/playerControl.sv Line: 51
-Warning (10230): Verilog HDL assignment warning at playerControl.sv(54): truncated value with size 32 to match size of target (10) File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/playerControl.sv Line: 54
-Warning (10230): Verilog HDL assignment warning at playerControl.sv(55): truncated value with size 32 to match size of target (10) File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/playerControl.sv Line: 55
+Warning (10230): Verilog HDL assignment warning at playerControl.sv(44): truncated value with size 32 to match size of target (9) File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/playerControl.sv Line: 44
+Warning (10230): Verilog HDL assignment warning at playerControl.sv(45): truncated value with size 32 to match size of target (9) File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/playerControl.sv Line: 45
+Warning (10230): Verilog HDL assignment warning at playerControl.sv(48): truncated value with size 32 to match size of target (9) File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/playerControl.sv Line: 48
+Warning (10230): Verilog HDL assignment warning at playerControl.sv(49): truncated value with size 32 to match size of target (9) File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/playerControl.sv Line: 49
+Warning (10230): Verilog HDL assignment warning at playerControl.sv(52): truncated value with size 32 to match size of target (10) File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/playerControl.sv Line: 52
+Warning (10230): Verilog HDL assignment warning at playerControl.sv(53): truncated value with size 32 to match size of target (10) File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/playerControl.sv Line: 53
+Warning (10230): Verilog HDL assignment warning at playerControl.sv(56): truncated value with size 32 to match size of target (10) File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/playerControl.sv Line: 56
+Warning (10230): Verilog HDL assignment warning at playerControl.sv(57): truncated value with size 32 to match size of target (10) File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/playerControl.sv Line: 57
 Info (12128): Elaborating entity "loadLevel" for hierarchy "loadLevel:load_unit" File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 97
 Info (12128): Elaborating entity "loadLevel_Control" for hierarchy "loadLevel:load_unit|loadLevel_Control:control_unit" File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/loadLevel.sv Line: 29
 Warning (10230): Verilog HDL assignment warning at loadLevel_Control.sv(53): truncated value with size 32 to match size of target (5) File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/loadLevel_Control.sv Line: 53
@@ -1229,6 +1229,7 @@ Info (17049): 4 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 5 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 11 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "SW[9]" File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 30
     Warning (15610): No output dependent on input pin "KEY[0]" File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 29
     Warning (15610): No output dependent on input pin "KEY[1]" File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 29
     Warning (15610): No output dependent on input pin "KEY[2]" File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 29
@@ -1239,18 +1240,17 @@ Warning (21074): Design contains 11 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "SW[6]" File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 30
     Warning (15610): No output dependent on input pin "SW[7]" File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 30
     Warning (15610): No output dependent on input pin "SW[8]" File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 30
-    Warning (15610): No output dependent on input pin "SW[9]" File: E:/College/Spring 2022/EE 371/Labs/ECE-371-Lab-6/VGA Buffer/DE1_SoC.sv Line: 30
-Info (21057): Implemented 13796 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 13649 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 15 input pins
     Info (21059): Implemented 81 output pins
     Info (21060): Implemented 3 bidirectional pins
-    Info (21061): Implemented 13536 logic cells
+    Info (21061): Implemented 13389 logic cells
     Info (21064): Implemented 160 RAM segments
     Info (21065): Implemented 1 PLLs
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 99 warnings
-    Info: Peak virtual memory: 4922 megabytes
-    Info: Processing ended: Sun Jun 05 02:17:13 2022
-    Info: Elapsed time: 00:00:33
-    Info: Total CPU time (on all processors): 00:00:50
+    Info: Peak virtual memory: 4929 megabytes
+    Info: Processing ended: Sun Jun 05 18:01:01 2022
+    Info: Elapsed time: 00:00:35
+    Info: Total CPU time (on all processors): 00:00:53
 
 

@@ -14,9 +14,9 @@
 		leftBound:	left bounding box of user outputs (10-bits)
 		rightBound:	Right bounding box of user outputs (10-bits)
 */
-module playerControl(clk, reset, up, down, left, right, currLevel, topBound, botBound, leftBound, rightBound, win);
+module playerControl(clk, reset, up, down, left, right, titleScreen, currLevel, topBound, botBound, leftBound, rightBound, win);
     input logic clk, reset;
-    input logic up, down, left, right;
+    input logic up, down, left, right, titleScreen;
     input logic [79:0]currLevel[59:0];
 	
 	 output logic win;	
@@ -38,21 +38,25 @@ module playerControl(clk, reset, up, down, left, right, currLevel, topBound, bot
             rightBound <= 15;
         end 
         //Hit detection 
-        else if (up & ((~currLevel[(topBound + 2)>>3][leftBound>>3]) & (~currLevel[(topBound + 2)>>3][rightBound>>3])))  begin
-            topBound <= topBound + 2;
-            botBound <= botBound + 2;
-        end
-        else if (down & ((~currLevel[(botBound - 2)>>3][leftBound>>3]) & (~currLevel[(botBound - 2)>>3][rightBound>>3]))) begin
-            topBound <= topBound - 2;
-            botBound <= botBound - 2; 
-        end
-        else if (left & ((~currLevel[topBound>>3][(leftBound - 3)>>3]) & (~currLevel[botBound>>3][(leftBound - 3)>>3]))) begin
-            leftBound <= leftBound - 2;
-            rightBound <= rightBound - 2; 
-        end
-        else if (right & ((~currLevel[topBound>>3][(rightBound + 2)>>3]) & (~currLevel[botBound>>3][(rightBound + 2)>>3]))) begin
-            leftBound <= leftBound + 2;
-            rightBound <= rightBound + 2; 
+        else begin
+            if(~titleScreen) begin 
+                if (up & ((~currLevel[(topBound + 2)>>3][leftBound>>3]) & (~currLevel[(topBound + 2)>>3][rightBound>>3])))  begin
+                topBound <= topBound + 2;
+                botBound <= botBound + 2;
+                end
+                if (down & ((~currLevel[(botBound - 2)>>3][leftBound>>3]) & (~currLevel[(botBound - 2)>>3][rightBound>>3]))) begin
+                    topBound <= topBound - 2;
+                    botBound <= botBound - 2; 
+                end
+                if (left & ((~currLevel[topBound>>3][(leftBound - 3)>>3]) & (~currLevel[botBound>>3][(leftBound - 3)>>3]))) begin
+                    leftBound <= leftBound - 2;
+                    rightBound <= rightBound - 2; 
+                end
+                if (right & ((~currLevel[topBound>>3][(rightBound + 2)>>3]) & (~currLevel[botBound>>3][(rightBound + 2)>>3]))) begin
+                    leftBound <= leftBound + 2;
+                    rightBound <= rightBound + 2; 
+                end
+            end
         end 
     end//always_ff
 	//y > 220 & y <= 280 & x > 304 & x <= 344

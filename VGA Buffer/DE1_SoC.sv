@@ -51,7 +51,7 @@
 	logic [79:0] startScreenRow;
 	//Clock select for divided clock to slow down animations
 	logic clkSelect;
-	assign clkSelect = div_clk[18];
+	assign clkSelect = div_clk[19];
 
 	clock_divider cdiv (.clock(CLOCK_50),
 	.reset(reset_wire),
@@ -91,15 +91,13 @@
     );
    
 	//Player controller instantiation
-	playerControl player_unit (.clk(clkSelect), .reset, .up(down), .down(up), .left, .right, .currLevel(currLevel), .topBound, .botBound, .leftBound, .rightBound, .win);
+	playerControl player_unit (.clk(clkSelect), .reset, .up(down), .down(up), .left, .right, .titleScreen, .currLevel(currLevel), .topBound, .botBound, .leftBound, .rightBound, .win);
 	
 	//Level Loading instantiation
-	loadLevel load_unit(.clk(CLOCK_50), .reset(reset_wire), .start, .levelSel, .currLevel, .ready, .done(levelLoaded));
+	loadLevel load_unit(.clk(CLOCK_50), .reset(reset_wire), .start(start & titleScreen), .levelSel, .currLevel, .ready, .done(levelLoaded));
 	
-	//Start Screen Loading
 	startScreenMem screenMem_unit(.address(y>>3), .clock(CLOCK_50), .q(startScreenRow));
 	
-	//Switch between game and title screens
 	gameManager manager_unit(.clk(CLOCK_50), .reset, .start(levelLoaded), .win, .titleScreen);
 	
 	//VGA Video Driver instantiation
@@ -109,7 +107,6 @@
 			 .VGA_CLK, .VGA_HS, .VGA_SYNC_N, .VGA_VS);
 	
 	
-	//Color animations for title screen
 	always_ff @(posedge CLOCK_50) begin
     	if(titleScreen)begin
     		if(startScreenRow[x>>3]) begin
@@ -152,27 +149,26 @@
 				b <= 0;
 			end
 		end
-		//Game color choice
 		else begin
 			if(y <= topBound & y >= botBound & x >= leftBound & x <= rightBound) begin
-				r <= 255;
-				g <= 255;
-				b <= 255;
+				r <= 63;
+				g <= 130;
+				b <= 109;
 			end
 			else if (currLevel[y>>3][x>>3]) begin
 				r <= 51;
 				g <= 0;
 				b <= 111;
 			end
-			else if(y >= 220 & y < 268 & x >= 304 & x < 344)begin
+			else if(y >= 224 & y < 272 & x >= 304 & x < 344)begin
 				r <= 145;
 				g <= 123;
 				b <= 76;
 			end
 			else begin
-				r <= 0;
-				g <= 0;
-				b <= 0;
+				r <= 255;
+				g <= 255;
+				b <= 255;
 			end
 		end
 	end //always_ff

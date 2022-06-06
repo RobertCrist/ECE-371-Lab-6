@@ -50,7 +50,11 @@ def generateMif():
          if(pixels[i][j].get_wall()):
             temp = temp + 2**j
       mifData.append(temp)
-   print(mifData)
+   for i in range(30):
+      line = '	' + str(i + 210) + '	:	' + str(mifData[i]) + ';'
+      print(line)
+
+
 
 generate = Button(root, text="Generate", command=generateMif)
 generate.place(x= 1680, y = 540)
